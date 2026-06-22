@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decal Authority</title>
+<title>Decal Authority | Brand Execution Systems</title>
 <meta name="description" content="Decal Authority is a Bulacan-based brand execution company for fleet branding, facility branding, large-format production, and corporate visual implementation.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
@@ -12,7 +12,6 @@
 :root{
   --navy:#101b46;
   --yellow:#f6c400;
-  --gray:#666666;
   --line:#d8dce8;
   --white:#ffffff;
 }
@@ -48,21 +47,21 @@ body{
 }
 
 .hero-inner{
-  width:min(1180px,100%);
+  width:min(1240px,100%);
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:34px;
+  gap:32px;
   text-align:center;
 }
 
 .top-lockup{
   width:100%;
   display:grid;
-  grid-template-columns:0.85fr auto 1.15fr;
+  grid-template-columns:0.9fr auto 1.1fr;
   align-items:center;
-  gap:44px;
+  gap:48px;
 }
 
 .brand-panel{
@@ -74,7 +73,7 @@ body{
 }
 
 .brand-logo{
-  width:clamp(210px,15vw,295px);
+  width:clamp(220px,16vw,310px);
   height:auto;
   display:block;
 }
@@ -107,7 +106,7 @@ body{
   font-weight:900;
   line-height:.94;
   letter-spacing:.5px;
-  font-size:clamp(44px,4.9vw,78px);
+  font-size:clamp(42px,4.6vw,74px);
 }
 
 .headline .line{
@@ -124,7 +123,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:18px;
+  gap:16px;
 }
 
 .focus-line{
@@ -156,48 +155,77 @@ body{
 }
 
 .logo-row{
-  width:min(920px,100%);
+  width:min(1120px,100%);
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(8,minmax(0,1fr));
   align-items:center;
-  gap:14px 42px;
+  justify-items:center;
+  gap:0;
+  margin-top:2px;
 }
 
 .client-logo{
-  min-height:64px;
+  min-height:70px;
+  width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:4px 12px;
+  padding:4px 20px;
+  position:relative;
+}
+
+.client-logo:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:1px;
+  height:48px;
+  background:rgba(16,27,70,.18);
 }
 
 .client-logo img{
   display:block;
   max-width:100%;
-  width:180px;
-  max-height:60px;
+  width:125px;
+  max-height:54px;
   height:auto;
   object-fit:contain;
   filter:grayscale(1);
   opacity:.86;
 }
 
-.client-logo:nth-child(1) img,
+.client-logo:nth-child(1) img{
+  width:115px;
+}
+
 .client-logo:nth-child(2) img{
-  width:112px;
-  max-height:62px;
+  width:125px;
 }
 
-.client-logo:nth-child(3) img,
-.client-logo:nth-child(4) img,
+.client-logo:nth-child(3) img{
+  width:100px;
+}
+
+.client-logo:nth-child(4) img{
+  width:86px;
+}
+
 .client-logo:nth-child(5) img{
-  width:200px;
+  width:130px;
 }
 
-.client-logo:nth-child(6) img,
-.client-logo:nth-child(7) img,
+.client-logo:nth-child(6) img{
+  width:130px;
+}
+
+.client-logo:nth-child(7) img{
+  width:135px;
+}
+
 .client-logo:nth-child(8) img{
-  width:190px;
+  width:145px;
 }
 
 .actions{
@@ -206,7 +234,7 @@ body{
   align-items:center;
   flex-wrap:wrap;
   gap:22px;
-  margin-top:2px;
+  margin-top:4px;
 }
 
 .btn{
@@ -252,6 +280,7 @@ body{
 
 @media(max-width:960px){
   .hero{
+    min-height:auto;
     padding:36px 18px;
   }
 
@@ -277,35 +306,42 @@ body{
     width:clamp(165px,28vw,230px);
   }
 
+  .kicker{
+    white-space:normal;
+  }
+
   .headline{
     font-size:clamp(42px,8vw,66px);
   }
 
+  .headline .line{
+    white-space:normal;
+  }
+
   .logo-row{
     width:100%;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px 18px;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px 0;
   }
 
   .client-logo{
     min-height:58px;
+    padding:4px 10px;
+  }
+
+  .client-logo:nth-child(4)::after,
+  .client-logo:nth-child(8)::after{
+    display:none;
   }
 
   .client-logo img{
-    width:155px;
-    max-height:54px;
-  }
-
-  .client-logo:nth-child(1) img,
-  .client-logo:nth-child(2) img{
-    width:94px;
-    max-height:52px;
+    width:110px;
+    max-height:46px;
   }
 }
 
 @media(max-width:640px){
   .hero{
-    min-height:auto;
     padding:34px 16px;
   }
 
@@ -320,17 +356,12 @@ body{
   .kicker{
     letter-spacing:5px;
     line-height:1.45;
-    white-space:normal;
   }
 
   .headline{
     font-size:clamp(38px,11.5vw,56px);
     line-height:.96;
     letter-spacing:.5px;
-  }
-
-  .headline .line{
-    white-space:normal;
   }
 
   .lower-content{
@@ -354,21 +385,20 @@ body{
 
   .logo-row{
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px 14px;
+    gap:10px 0;
   }
 
   .client-logo{
-    min-height:50px;
+    min-height:52px;
+    padding:4px 10px;
+  }
+
+  .client-logo::after{
+    display:none !important;
   }
 
   .client-logo img{
-    width:138px;
-    max-height:46px;
-  }
-
-  .client-logo:nth-child(1) img,
-  .client-logo:nth-child(2) img{
-    width:84px;
+    width:125px;
     max-height:46px;
   }
 
@@ -396,7 +426,7 @@ body{
   }
 
   .brand-logo{
-    width:220px;
+    width:225px;
   }
 
   .vertical-divider{
@@ -404,7 +434,7 @@ body{
   }
 
   .headline{
-    font-size:clamp(42px,4.35vw,68px);
+    font-size:clamp(40px,4.25vw,68px);
   }
 
   .lower-content{
@@ -412,7 +442,7 @@ body{
   }
 
   .client-logo{
-    min-height:54px;
+    min-height:58px;
   }
 
   .client-logo img{
