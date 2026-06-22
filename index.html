@@ -1,432 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Decal Authority | Brand Execution Systems</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decal Authority</title>
 
-<style>
-:root{
-  --navy:#101b46;
-  --yellow:#f6c400;
-  --gray:#6f6f6f;
-  --light:#ffffff;
-  --line:#d9d9d9;
-  --black:#111111;
-}
+  <style>
+    :root{
+      --navy:#13204B;
+      --yellow:#FCC616;
+      --gray:#BABABA;
+      --light:#FEFEFE;
+      --text:#1a1a1a;
+      --line:#d9d9d9;
+    }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    html, body{
+      width:100%;
+      height:100%;
+      background:#fff;
+      font-family:Segoe UI, Arial, sans-serif;
+      color:var(--text);
+    }
 
-body{
-  font-family:"Segoe UI", Arial, sans-serif;
-  background:#ffffff;
-  color:var(--navy);
-  min-height:100vh;
-}
+    body{
+      overflow-x:hidden;
+    }
 
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:48px 22px;
-  background:
-    radial-gradient(circle at top, #ffffff 0%, #ffffff 48%, #fafafa 100%);
-}
+    .hero{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:#fff;
+    }
 
-.hero{
-  width:100%;
-  max-width:1120px;
-  text-align:center;
-}
+    .hero-inner{
+      width:min(1180px, 100%);
+      min-height:calc(100svh - 48px);
+      display:grid;
+      grid-template-rows:auto auto auto auto auto;
+      align-content:center;
+      justify-items:center;
+      gap:18px;
+      text-align:center;
+    }
 
-.logo-wrap{
-  margin-bottom:34px;
-}
+    .brand{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
 
-.logo{
-  width:260px;
-  max-width:70vw;
-  height:auto;
-}
+    .brand img{
+      width:clamp(180px, 16vw, 260px);
+      height:auto;
+      display:block;
+    }
 
-.kicker{
-  font-size:15px;
-  letter-spacing:12px;
-  text-transform:uppercase;
-  color:var(--navy);
-  margin-bottom:88px;
-  font-weight:500;
-}
+    .eyebrow{
+      font-size:clamp(12px, 1vw, 16px);
+      letter-spacing:.55em;
+      color:var(--navy);
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
 
-.headline{
-  font-size:clamp(46px, 9vw, 96px);
-  line-height:.98;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-weight:900;
-  color:var(--navy);
-  margin-bottom:42px;
-}
+    .headline{
+      font-weight:800;
+      color:var(--navy);
+      text-transform:uppercase;
+      line-height:.95;
+      letter-spacing:-0.03em;
+      font-size:clamp(54px, 7.3vw, 122px);
+      max-width:1000px;
+    }
 
-.yellow-dot{
-  color:var(--yellow);
-}
+    .headline .dot{
+      color:var(--yellow);
+    }
 
-.divider{
-  width:72px;
-  height:4px;
-  background:var(--yellow);
-  margin:0 auto 34px;
-  border-radius:100px;
-}
+    .accent-line{
+      width:72px;
+      height:4px;
+      background:var(--yellow);
+      border-radius:99px;
+    }
 
-.segments{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:90px;
-  color:#202020;
-  font-size:15px;
-  letter-spacing:8px;
-  text-transform:uppercase;
-}
+    .subline{
+      font-size:clamp(12px, 1vw, 15px);
+      letter-spacing:.38em;
+      color:var(--navy);
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
 
-.segment-dot{
-  width:7px;
-  height:7px;
-  background:var(--yellow);
-  border-radius:50%;
-  display:inline-block;
-}
+    .subline .bullet{
+      color:var(--yellow);
+      margin:0 .75em;
+    }
 
-.executed{
-  margin-bottom:58px;
-}
+    .clients-wrap{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      margin-top:6px;
+    }
 
-.executed-label{
-  font-size:13px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-  color:#333;
-  margin-bottom:24px;
-  font-weight:700;
-}
+    .clients-title{
+      font-size:clamp(12px, .95vw, 14px);
+      font-weight:700;
+      letter-spacing:.38em;
+      color:var(--navy);
+      text-transform:uppercase;
+    }
 
-.logo-grid{
-  display:grid;
-  grid-template-columns:repeat(8, 1fr);
-  gap:0;
-  align-items:center;
-  border-top:0;
-  max-width:980px;
-  margin:0 auto;
-}
+    .clients{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(8, minmax(0, 1fr));
+      align-items:center;
+      gap:18px;
+    }
 
-.client-logo{
-  min-height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 18px;
-  border-right:1px solid var(--line);
-}
+    .client{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:0 10px;
+      position:relative;
+    }
 
-.client-logo:last-child{
-  border-right:none;
-}
+    .client:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      right:-9px;
+      top:50%;
+      transform:translateY(-50%);
+      width:1px;
+      height:34px;
+      background:var(--line);
+    }
 
-.client-logo img{
-  width:100%;
-  max-width:120px;
-  max-height:54px;
-  object-fit:contain;
-  filter:grayscale(1);
-  opacity:.72;
-}
+    .client img{
+      max-width:100%;
+      width:auto;
+      height:clamp(26px, 2.5vw, 40px);
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:.9;
+      display:block;
+    }
 
-.actions{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      margin-top:6px;
+      flex-wrap:wrap;
+    }
 
-.btn{
-  min-width:260px;
-  height:68px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  font-size:14px;
-  font-weight:800;
-  border-radius:4px;
-  transition:.2s ease;
-}
+    .button{
+      min-width:290px;
+      height:64px;
+      padding:0 26px;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:clamp(15px, 1vw, 18px);
+      letter-spacing:.04em;
+      transition:.2s ease;
+    }
 
-.btn-primary{
-  background:var(--yellow);
-  color:#111;
-  border:2px solid var(--yellow);
-  box-shadow:0 12px 28px rgba(246,196,0,.22);
-}
+    .button.primary{
+      background:var(--yellow);
+      color:var(--navy);
+      border:2px solid var(--yellow);
+    }
 
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(246,196,0,.3);
-}
+    .button.secondary{
+      background:#fff;
+      color:var(--navy);
+      border:2px solid rgba(19,32,75,.35);
+    }
 
-.btn-outline{
-  background:#fff;
-  color:#111;
-  border:2px solid #111;
-}
+    .button:hover{
+      transform:translateY(-1px);
+    }
 
-.btn-outline:hover{
-  transform:translateY(-2px);
-  background:#111;
-  color:#fff;
-}
+    .icon{
+      font-size:1.15em;
+      line-height:1;
+    }
 
-.icon{
-  font-size:22px;
-  line-height:1;
-}
+    /* ---------- Tablet ---------- */
+    @media (max-width: 1100px){
+      .hero-inner{
+        gap:16px;
+      }
 
-.footer-note{
-  margin-top:42px;
-  font-size:13px;
-  color:#777;
-  letter-spacing:1px;
-}
+      .clients{
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+        row-gap:14px;
+      }
 
-@media(max-width:900px){
-  .page{
-    padding:42px 18px;
-  }
+      .client:nth-child(4)::after{
+        display:none;
+      }
+    }
 
-  .kicker{
-    letter-spacing:8px;
-    margin-bottom:72px;
-  }
+    /* ---------- Mobile ---------- */
+    @media (max-width: 768px){
+      .hero{
+        padding:20px 16px;
+      }
 
-  .segments{
-    letter-spacing:5px;
-    margin-bottom:70px;
-  }
+      .hero-inner{
+        min-height:auto;
+        gap:16px;
+      }
 
-  .logo-grid{
-    grid-template-columns:repeat(4, 1fr);
-    row-gap:18px;
-  }
+      .brand img{
+        width:160px;
+      }
 
-  .client-logo:nth-child(4){
-    border-right:none;
-  }
-}
+      .eyebrow{
+        letter-spacing:.35em;
+        white-space:normal;
+      }
 
-@media(max-width:620px){
-  .page{
-    align-items:flex-start;
-    padding-top:56px;
-  }
+      .headline{
+        font-size:clamp(40px, 12vw, 72px);
+        max-width:100%;
+      }
 
-  .logo{
-    width:220px;
-  }
+      .subline{
+        white-space:normal;
+        letter-spacing:.22em;
+        line-height:1.6;
+      }
 
-  .logo-wrap{
-    margin-bottom:28px;
-  }
+      .clients{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:12px 8px;
+      }
 
-  .kicker{
-    font-size:12px;
-    letter-spacing:5px;
-    margin-bottom:56px;
-  }
+      .client{
+        min-height:44px;
+      }
 
-  .headline{
-    font-size:clamp(42px, 14vw, 64px);
-    letter-spacing:1px;
-  }
+      .client::after{
+        display:none !important;
+      }
 
-  .segments{
-    flex-direction:column;
-    gap:10px;
-    letter-spacing:4px;
-    font-size:12px;
-    margin-bottom:58px;
-  }
+      .client img{
+        height:26px;
+      }
 
-  .segment-dot{
-    display:none;
-  }
+      .buttons{
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+      }
 
-  .logo-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:18px 0;
-  }
-
-  .client-logo{
-    border-right:none;
-    min-height:58px;
-  }
-
-  .client-logo img{
-    max-width:118px;
-    max-height:48px;
-  }
-
-  .actions{
-    gap:14px;
-  }
-
-  .btn{
-    width:100%;
-    max-width:340px;
-    min-width:unset;
-    height:62px;
-  }
-}
-
-@media(max-height:760px) and (min-width:900px){
-  .page{
-    padding-top:32px;
-    padding-bottom:32px;
-  }
-
-  .logo{
-    width:220px;
-  }
-
-  .kicker{
-    margin-bottom:46px;
-  }
-
-  .headline{
-    font-size:72px;
-  }
-
-  .segments{
-    margin-bottom:48px;
-  }
-
-  .executed{
-    margin-bottom:38px;
-  }
-}
-</style>
+      .button{
+        width:100%;
+        min-width:0;
+        max-width:420px;
+        height:58px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<main class="page">
+  <section class="hero">
+    <div class="hero-inner">
 
-  <section class="hero" aria-label="Decal Authority Landing Page">
-
-    <div class="logo-wrap">
-      <img class="logo" src="brand.svg" alt="Decal Authority logo">
-    </div>
-
-    <div class="kicker">
-      Brand Execution Systems
-    </div>
-
-    <h1 class="headline">
-      Brand Standards,<br>
-      Executed<span class="yellow-dot">.</span>
-    </h1>
-
-    <div class="divider"></div>
-
-    <div class="segments" aria-label="Service focus">
-      <span>Corporate</span>
-      <span class="segment-dot"></span>
-      <span>Industrial</span>
-      <span class="segment-dot"></span>
-      <span>Multi-Site Deployments</span>
-    </div>
-
-    <div class="executed">
-
-      <div class="executed-label">
-        Executed For
+      <div class="brand">
+        <img src="brand.svg" alt="Decal Authority">
+        <div class="eyebrow">Brand Execution Systems</div>
       </div>
 
-      <div class="logo-grid" aria-label="Selected executed brands">
+      <h1 class="headline">
+        Brand Standards,<br>Executed<span class="dot">.</span>
+      </h1>
 
-        <div class="client-logo">
-          <img src="logo1.svg" alt="Client logo 1">
+      <div class="accent-line"></div>
+
+      <div class="subline">
+        Corporate <span class="bullet">•</span>
+        Industrial <span class="bullet">•</span>
+        Multi-Site Deployments
+      </div>
+
+      <div class="clients-wrap">
+        <div class="clients-title">Executed For</div>
+
+        <div class="clients">
+          <div class="client"><img src="logo1.svg" alt="Client 1"></div>
+          <div class="client"><img src="logo2.svg" alt="Client 2"></div>
+          <div class="client"><img src="logo3.svg" alt="Client 3"></div>
+          <div class="client"><img src="logo4.svg" alt="Client 4"></div>
+          <div class="client"><img src="logo5.svg" alt="Client 5"></div>
+          <div class="client"><img src="logo6.svg" alt="Client 6"></div>
+          <div class="client"><img src="logo7.svg" alt="Client 7"></div>
+          <div class="client"><img src="logo8.svg" alt="Client 8"></div>
         </div>
+      </div>
 
-        <div class="client-logo">
-          <img src="logo2.svg" alt="Client logo 2">
-        </div>
+      <div class="buttons">
+        <a class="button primary" href="profile.pdf" target="_blank">
+          <span class="icon">📄</span>
+          Download Company Profile
+        </a>
 
-        <div class="client-logo">
-          <img src="logo3.svg" alt="Client logo 3">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo4.svg" alt="Client logo 4">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo5.svg" alt="Client logo 5">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo6.svg" alt="Client logo 6">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo7.svg" alt="Client logo 7">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo8.svg" alt="Client logo 8">
-        </div>
-
+        <a class="button secondary" href="mailto:info@decalauthority.ph">
+          Get a Quote <span class="icon">→</span>
+        </a>
       </div>
 
     </div>
-
-    <div class="actions">
-
-      <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
-        <span class="icon">▣</span>
-        Download Company Profile
-      </a>
-
-      <a class="btn btn-outline" href="mailto:info@decalauthority.ph?subject=Project%20Inquiry%20-%20Decal%20Authority">
-        Get A Quote
-        <span class="icon">→</span>
-      </a>
-
-    </div>
-
-    <div class="footer-note">
-      Fleet Branding · Facility Branding · Large Format Production · Brand Compliance Execution
-    </div>
-
   </section>
-
-</main>
 
 </body>
 </html>
