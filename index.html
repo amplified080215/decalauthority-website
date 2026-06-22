@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Decal Authority</title>
-  <meta name="description" content="Decal Authority is a Bulacan-based brand execution company for fleet branding, facility branding, large-format production, and corporate visual implementation."> <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Decal Authority is a Bulacan-based brand execution company for fleet branding, facility branding, large-format production, and corporate visual implementation.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <style>
 :root{
@@ -26,19 +28,27 @@ html{
   scroll-behavior:smooth;
 }
 
+html,
+body{
+  width:100%;
+  min-height:100%;
+}
+
 body{
   font-family:"Segoe UI", Arial, sans-serif;
   background:#ffffff;
   color:var(--navy);
   min-height:100vh;
+  overflow-x:hidden;
 }
 
 .page{
   min-height:100vh;
+  min-height:100svh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:48px 22px;
+  padding:34px 22px;
   background:
     radial-gradient(circle at top, #ffffff 0%, #ffffff 48%, #fafafa 100%);
 }
@@ -50,7 +60,7 @@ body{
 }
 
 .logo-wrap{
-  margin-bottom:34px;
+  margin-bottom:28px;
 }
 
 .logo{
@@ -61,21 +71,21 @@ body{
 
 .kicker{
   font-size:15px;
-  letter-spacing:12px;
+  letter-spacing:7px;
   text-transform:uppercase;
   color:var(--navy);
-  margin-bottom:88px;
+  margin-bottom:62px;
   font-weight:500;
 }
 
 .headline{
-  font-size:clamp(46px, 9vw, 96px);
+  font-size:clamp(46px, 8.4vw, 88px);
   line-height:.98;
   letter-spacing:3px;
   text-transform:uppercase;
   font-weight:900;
   color:var(--navy);
-  margin-bottom:42px;
+  margin-bottom:34px;
 }
 
 .yellow-dot{
@@ -86,7 +96,7 @@ body{
   width:72px;
   height:4px;
   background:var(--yellow);
-  margin:0 auto 34px;
+  margin:0 auto 28px;
   border-radius:100px;
 }
 
@@ -96,7 +106,7 @@ body{
   align-items:center;
   gap:18px;
   flex-wrap:wrap;
-  margin-bottom:90px;
+  margin-bottom:56px;
   color:#202020;
   font-size:15px;
   letter-spacing:8px;
@@ -112,7 +122,7 @@ body{
 }
 
 .executed{
-  margin-bottom:58px;
+  margin-bottom:36px;
 }
 
 .executed-label{
@@ -120,7 +130,7 @@ body{
   letter-spacing:6px;
   text-transform:uppercase;
   color:#333;
-  margin-bottom:24px;
+  margin-bottom:22px;
   font-weight:700;
 }
 
@@ -178,6 +188,7 @@ body{
   font-weight:800;
   border-radius:4px;
   transition:.2s ease;
+  cursor:pointer;
 }
 
 .btn-primary{
@@ -210,7 +221,7 @@ body{
 }
 
 .footer-note{
-  margin-top:42px;
+  margin-top:34px;
   font-size:13px;
   color:#777;
   letter-spacing:1px;
@@ -222,7 +233,7 @@ body{
   }
 
   .kicker{
-    letter-spacing:8px;
+    letter-spacing:6px;
     margin-bottom:72px;
   }
 
@@ -257,7 +268,7 @@ body{
 
   .kicker{
     font-size:12px;
-    letter-spacing:5px;
+    letter-spacing:4px;
     margin-bottom:56px;
   }
 
@@ -307,31 +318,45 @@ body{
 
 @media(max-height:760px) and (min-width:900px){
   .page{
-    padding-top:32px;
-    padding-bottom:32px;
+    padding-top:26px;
+    padding-bottom:26px;
   }
 
   .logo{
     width:220px;
   }
 
+  .logo-wrap{
+    margin-bottom:20px;
+  }
+
   .kicker{
-    margin-bottom:46px;
+    margin-bottom:38px;
   }
 
   .headline{
-    font-size:72px;
+    font-size:68px;
+    margin-bottom:26px;
+  }
+
+  .divider{
+    margin-bottom:22px;
   }
 
   .segments{
-    margin-bottom:48px;
+    margin-bottom:38px;
   }
 
   .executed{
-    margin-bottom:38px;
+    margin-bottom:28px;
+  }
+
+  .footer-note{
+    margin-top:26px;
   }
 }
 </style>
+
 </head>
 
 <body>
@@ -340,94 +365,116 @@ body{
 
   <section class="hero" aria-label="Decal Authority Landing Page">
 
-    <div class="logo-wrap">
-      <img class="logo" src="brand.svg" alt="Decal Authority logo">
+```
+<div class="logo-wrap">
+  <img class="logo" src="brand.svg" alt="Decal Authority logo">
+</div>
+
+<div class="kicker">
+  Brand Execution Systems
+</div>
+
+<h1 class="headline">
+  Brand Standards,<br>
+  Executed<span class="yellow-dot">.</span>
+</h1>
+
+<div class="divider"></div>
+
+<div class="segments" aria-label="Service focus">
+  <span>Corporate</span>
+  <span class="segment-dot"></span>
+  <span>Industrial</span>
+  <span class="segment-dot"></span>
+  <span>Multi-Site Deployments</span>
+</div>
+
+<div class="executed">
+
+  <div class="executed-label">
+    Executed For
+  </div>
+
+  <div class="logo-grid" aria-label="Selected executed brands">
+
+    <div class="client-logo">
+      <img src="logo1.svg" alt="Eagle Cement">
     </div>
 
-    <div class="kicker">
-      Brand Execution Systems
+    <div class="client-logo">
+      <img src="logo2.svg" alt="CEVA Logistics">
     </div>
 
-    <h1 class="headline">
-      Brand Standards,<br>
-      Executed<span class="yellow-dot">.</span>
-    </h1>
-
-    <div class="divider"></div>
-
-    <div class="segments" aria-label="Service focus">
-      <span>Corporate</span>
-      <span class="segment-dot"></span>
-      <span>Industrial</span>
-      <span class="segment-dot"></span>
-      <span>Multi-Site Deployments</span>
+    <div class="client-logo">
+      <img src="logo3.svg" alt="Trends Group">
     </div>
 
-    <div class="executed">
-
-      <div class="executed-label">
-        Executed For
-      </div>
-
-      <div class="logo-grid" aria-label="Selected executed brands">
-
-        <div class="client-logo">
-          <img src="logo1.svg" alt="Client logo 1">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo2.svg" alt="Client logo 2">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo3.svg" alt="Client logo 3">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo4.svg" alt="Client logo 4">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo5.svg" alt="Client logo 5">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo6.svg" alt="Client logo 6">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo7.svg" alt="Client logo 7">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo8.svg" alt="Client logo 8">
-        </div>
-
-      </div>
-
+    <div class="client-logo">
+      <img src="logo4.svg" alt="O!Save Trading">
     </div>
 
-    <div class="actions">
-
-      <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
-        <span class="icon">▣</span>
-        Download Company Profile
-      </a>
-
-      <a class="btn btn-outline" href="mailto:info@decalauthority.ph?subject=Project%20Inquiry%20-%20Decal%20Authority">
-        Get A Quote
-        <span class="icon">→</span>
-      </a>
-
+    <div class="client-logo">
+      <img src="logo5.svg" alt="Supremacy International">
     </div>
 
-    <div class="footer-note">
-      Fleet Branding · Facility Branding · Large Format Production · Brand Compliance Execution
+    <div class="client-logo">
+      <img src="logo6.svg" alt="Vista Land">
     </div>
+
+    <div class="client-logo">
+      <img src="logo7.svg" alt="Bolloré Logistics">
+    </div>
+
+    <div class="client-logo">
+      <img src="logo8.svg" alt="Schneider Electric">
+    </div>
+
+  </div>
+
+</div>
+
+<div class="actions">
+
+  <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
+    <span class="icon">▣</span>
+    Download Company Profile
+  </a>
+
+  <a class="btn btn-outline" href="#" id="quoteButton">
+    Get A Quote
+    <span class="icon">→</span>
+  </a>
+
+</div>
+
+<div class="footer-note">
+  Fleet Branding · Facility Branding · Large Format Production · Brand Compliance Execution
+</div>
+```
 
   </section>
 
 </main>
+
+<script>
+document.getElementById("quoteButton").addEventListener("click", function(event){
+  event.preventDefault();
+
+  const email = "info@decalauthority.ph";
+  const subject = "Project Inquiry - Decal Authority";
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if(isMobile){
+    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+  }else{
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=" + encodeURIComponent(subject),
+      "_blank"
+    );
+  }
+});
+</script>
 
 </body>
 </html>
