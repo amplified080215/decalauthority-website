@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Decal Authority</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="description" content="Decal Authority is a Bulacan-based brand execution company for fleet branding, facility branding, large-format production, and corporate visual implementation.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <style>
 :root{
   --navy:#101b46;
   --yellow:#f6c400;
-  --gray:#6f6f6f;
-  --light:#ffffff;
-  --line:#d9d9d9;
-  --black:#111111;
+  --gray:#666666;
+  --line:#d8dce8;
+  --white:#ffffff;
 }
 
 *{
@@ -22,411 +23,471 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
+html,
+body{
+  width:100%;
+  min-height:100%;
 }
 
 body{
   font-family:"Segoe UI", Arial, sans-serif;
   background:#ffffff;
   color:var(--navy);
-  min-height:100vh;
-}
-
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:48px 22px;
-  background:
-    radial-gradient(circle at top, #ffffff 0%, #ffffff 48%, #fafafa 100%);
+  overflow-x:hidden;
 }
 
 .hero{
   width:100%;
-  max-width:1120px;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:38px 28px;
+  background:#ffffff;
+}
+
+.hero-inner{
+  width:min(1180px,100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:34px;
   text-align:center;
 }
 
-.logo-wrap{
-  margin-bottom:34px;
+.top-lockup{
+  width:100%;
+  display:grid;
+  grid-template-columns:0.85fr auto 1.15fr;
+  align-items:center;
+  gap:44px;
 }
 
-.logo{
-  width:260px;
-  max-width:70vw;
+.brand-panel{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+.brand-logo{
+  width:clamp(210px,15vw,295px);
   height:auto;
+  display:block;
 }
 
 .kicker{
-  font-size:15px;
-  letter-spacing:12px;
+  font-size:clamp(12px,.82vw,15px);
+  letter-spacing:clamp(5px,.45vw,8px);
   text-transform:uppercase;
+  font-weight:800;
   color:var(--navy);
-  margin-bottom:88px;
-  font-weight:500;
+  white-space:nowrap;
+}
+
+.vertical-divider{
+  width:3px;
+  height:150px;
+  background:var(--yellow);
+  border-radius:999px;
+}
+
+.headline-panel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .headline{
-  font-size:clamp(46px, 9vw, 96px);
-  line-height:.98;
-  letter-spacing:3px;
+  color:var(--navy);
   text-transform:uppercase;
   font-weight:900;
-  color:var(--navy);
-  margin-bottom:42px;
+  line-height:.94;
+  letter-spacing:.5px;
+  font-size:clamp(44px,4.9vw,78px);
 }
 
-.yellow-dot{
+.headline .line{
+  display:block;
+  white-space:nowrap;
+}
+
+.period{
   color:var(--yellow);
 }
 
-.divider{
-  width:72px;
-  height:4px;
-  background:var(--yellow);
-  margin:0 auto 34px;
-  border-radius:100px;
-}
-
-.segments{
+.lower-content{
+  width:100%;
   display:flex;
-  justify-content:center;
+  flex-direction:column;
   align-items:center;
   gap:18px;
+}
+
+.focus-line{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   flex-wrap:wrap;
-  margin-bottom:90px;
-  color:#202020;
-  font-size:15px;
-  letter-spacing:8px;
+  gap:14px;
+  color:var(--navy);
+  font-size:clamp(11px,.72vw,14px);
+  letter-spacing:clamp(3.5px,.32vw,6px);
   text-transform:uppercase;
 }
 
-.segment-dot{
-  width:7px;
-  height:7px;
-  background:var(--yellow);
+.focus-line .bullet{
+  width:6px;
+  height:6px;
   border-radius:50%;
+  background:var(--yellow);
   display:inline-block;
 }
 
-.executed{
-  margin-bottom:58px;
-}
-
-.executed-label{
-  font-size:13px;
-  letter-spacing:6px;
+.executed-title{
+  font-size:clamp(11px,.72vw,14px);
+  letter-spacing:clamp(4px,.35vw,7px);
   text-transform:uppercase;
-  color:#333;
-  margin-bottom:24px;
-  font-weight:700;
+  font-weight:900;
+  color:var(--navy);
 }
 
-.logo-grid{
+.logo-row{
+  width:min(920px,100%);
   display:grid;
-  grid-template-columns:repeat(8, 1fr);
-  gap:0;
+  grid-template-columns:repeat(4,minmax(0,1fr));
   align-items:center;
-  border-top:0;
-  max-width:980px;
-  margin:0 auto;
+  gap:14px 42px;
 }
 
 .client-logo{
-  min-height:68px;
+  min-height:64px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:8px 18px;
-  border-right:1px solid var(--line);
-}
-
-.client-logo:last-child{
-  border-right:none;
+  padding:4px 12px;
 }
 
 .client-logo img{
-  width:100%;
-  max-width:120px;
-  max-height:54px;
+  display:block;
+  max-width:100%;
+  width:180px;
+  max-height:60px;
+  height:auto;
   object-fit:contain;
   filter:grayscale(1);
-  opacity:.72;
+  opacity:.86;
+}
+
+.client-logo:nth-child(1) img,
+.client-logo:nth-child(2) img{
+  width:112px;
+  max-height:62px;
+}
+
+.client-logo:nth-child(3) img,
+.client-logo:nth-child(4) img,
+.client-logo:nth-child(5) img{
+  width:200px;
+}
+
+.client-logo:nth-child(6) img,
+.client-logo:nth-child(7) img,
+.client-logo:nth-child(8) img{
+  width:190px;
 }
 
 .actions{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:28px;
   flex-wrap:wrap;
+  gap:22px;
+  margin-top:2px;
 }
 
 .btn{
-  min-width:260px;
-  height:68px;
+  min-width:300px;
+  height:58px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:12px;
+  padding:0 28px;
+  border-radius:7px;
   text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  font-size:14px;
-  font-weight:800;
-  border-radius:4px;
-  transition:.2s ease;
+  letter-spacing:.03em;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+  position:relative;
+  z-index:10;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
 }
 
 .btn-primary{
   background:var(--yellow);
-  color:#111;
+  color:#111111;
   border:2px solid var(--yellow);
-  box-shadow:0 12px 28px rgba(246,196,0,.22);
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(246,196,0,.3);
+  box-shadow:0 12px 26px rgba(246,196,0,.2);
 }
 
 .btn-outline{
-  background:#fff;
-  color:#111;
-  border:2px solid #111;
+  background:#ffffff;
+  color:#111111;
+  border:2px solid #111111;
 }
 
 .btn-outline:hover{
-  transform:translateY(-2px);
-  background:#111;
-  color:#fff;
+  background:#111111;
+  color:#ffffff;
 }
 
-.icon{
-  font-size:22px;
-  line-height:1;
-}
-
-.footer-note{
-  margin-top:42px;
-  font-size:13px;
-  color:#777;
-  letter-spacing:1px;
-}
-
-@media(max-width:900px){
-  .page{
-    padding:42px 18px;
+@media(max-width:960px){
+  .hero{
+    padding:36px 18px;
   }
 
-  .kicker{
-    letter-spacing:8px;
-    margin-bottom:72px;
+  .hero-inner{
+    gap:24px;
   }
 
-  .segments{
-    letter-spacing:5px;
-    margin-bottom:70px;
-  }
-
-  .logo-grid{
-    grid-template-columns:repeat(4, 1fr);
-    row-gap:18px;
-  }
-
-  .client-logo:nth-child(4){
-    border-right:none;
-  }
-}
-
-@media(max-width:620px){
-  .page{
-    align-items:flex-start;
-    padding-top:56px;
-  }
-
-  .logo{
-    width:220px;
-  }
-
-  .logo-wrap{
-    margin-bottom:28px;
-  }
-
-  .kicker{
-    font-size:12px;
-    letter-spacing:5px;
-    margin-bottom:56px;
-  }
-
-  .headline{
-    font-size:clamp(42px, 14vw, 64px);
-    letter-spacing:1px;
-  }
-
-  .segments{
+  .top-lockup{
+    display:flex;
     flex-direction:column;
-    gap:10px;
-    letter-spacing:4px;
-    font-size:12px;
-    margin-bottom:58px;
+    gap:20px;
   }
 
-  .segment-dot{
+  .vertical-divider{
     display:none;
   }
 
-  .logo-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:18px 0;
+  .brand-panel{
+    gap:16px;
+  }
+
+  .brand-logo{
+    width:clamp(165px,28vw,230px);
+  }
+
+  .headline{
+    font-size:clamp(42px,8vw,66px);
+  }
+
+  .logo-row{
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px 18px;
   }
 
   .client-logo{
-    border-right:none;
     min-height:58px;
   }
 
   .client-logo img{
-    max-width:118px;
-    max-height:48px;
+    width:155px;
+    max-height:54px;
+  }
+
+  .client-logo:nth-child(1) img,
+  .client-logo:nth-child(2) img{
+    width:94px;
+    max-height:52px;
+  }
+}
+
+@media(max-width:640px){
+  .hero{
+    min-height:auto;
+    padding:34px 16px;
+  }
+
+  .hero-inner{
+    gap:22px;
+  }
+
+  .brand-logo{
+    width:155px;
+  }
+
+  .kicker{
+    letter-spacing:5px;
+    line-height:1.45;
+    white-space:normal;
+  }
+
+  .headline{
+    font-size:clamp(38px,11.5vw,56px);
+    line-height:.96;
+    letter-spacing:.5px;
+  }
+
+  .headline .line{
+    white-space:normal;
+  }
+
+  .lower-content{
+    gap:16px;
+  }
+
+  .focus-line{
+    flex-direction:column;
+    gap:7px;
+    letter-spacing:4px;
+    line-height:1.5;
+  }
+
+  .focus-line .bullet{
+    display:none;
+  }
+
+  .executed-title{
+    letter-spacing:5px;
+  }
+
+  .logo-row{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px 14px;
+  }
+
+  .client-logo{
+    min-height:50px;
+  }
+
+  .client-logo img{
+    width:138px;
+    max-height:46px;
+  }
+
+  .client-logo:nth-child(1) img,
+  .client-logo:nth-child(2) img{
+    width:84px;
+    max-height:46px;
   }
 
   .actions{
-    gap:14px;
+    width:100%;
+    gap:12px;
   }
 
   .btn{
     width:100%;
-    max-width:340px;
-    min-width:unset;
-    height:62px;
+    max-width:360px;
+    min-width:0;
+    height:54px;
   }
 }
 
-@media(max-height:760px) and (min-width:900px){
-  .page{
-    padding-top:32px;
-    padding-bottom:32px;
+@media(max-height:780px) and (min-width:961px){
+  .hero{
+    padding-top:28px;
+    padding-bottom:28px;
   }
 
-  .logo{
+  .hero-inner{
+    gap:24px;
+  }
+
+  .brand-logo{
     width:220px;
   }
 
-  .kicker{
-    margin-bottom:46px;
+  .vertical-divider{
+    height:125px;
   }
 
   .headline{
-    font-size:72px;
+    font-size:clamp(42px,4.35vw,68px);
   }
 
-  .segments{
-    margin-bottom:48px;
+  .lower-content{
+    gap:14px;
   }
 
-  .executed{
-    margin-bottom:38px;
+  .client-logo{
+    min-height:54px;
+  }
+
+  .client-logo img{
+    max-height:50px;
+  }
+
+  .btn{
+    height:52px;
   }
 }
 </style>
+
 </head>
 
 <body>
 
-<main class="page">
+<main class="hero" aria-label="Decal Authority landing page">
+  <section class="hero-inner">
 
-  <section class="hero" aria-label="Decal Authority Landing Page">
+```
+<div class="top-lockup">
 
-    <div class="logo-wrap">
-      <img class="logo" src="brand.svg" alt="Decal Authority logo">
-    </div>
+  <div class="brand-panel">
+    <img class="brand-logo" src="brand.svg" alt="Decal Authority">
+    <div class="kicker">Brand Execution Systems</div>
+  </div>
 
-    <div class="kicker">
-      Brand Execution Systems
-    </div>
+  <div class="vertical-divider" aria-hidden="true"></div>
 
+  <div class="headline-panel">
     <h1 class="headline">
-      Brand Standards,<br>
-      Executed<span class="yellow-dot">.</span>
+      <span class="line">Brand Standards,</span>
+      <span class="line">Executed<span class="period">.</span></span>
     </h1>
+  </div>
 
-    <div class="divider"></div>
+</div>
 
-    <div class="segments" aria-label="Service focus">
-      <span>Corporate</span>
-      <span class="segment-dot"></span>
-      <span>Industrial</span>
-      <span class="segment-dot"></span>
-      <span>Multi-Site Deployments</span>
-    </div>
+<div class="lower-content">
 
-    <div class="executed">
+  <div class="focus-line" aria-label="Service focus">
+    <span>Corporate</span>
+    <span class="bullet" aria-hidden="true"></span>
+    <span>Industrial</span>
+    <span class="bullet" aria-hidden="true"></span>
+    <span>Multi-Site Deployments</span>
+  </div>
 
-      <div class="executed-label">
-        Executed For
-      </div>
+  <div class="executed-title">Executed For</div>
 
-      <div class="logo-grid" aria-label="Selected executed brands">
+  <div class="logo-row" aria-label="Selected client brands">
+    <div class="client-logo"><img src="logo1.svg" alt="Eagle Cement"></div>
+    <div class="client-logo"><img src="logo2.svg" alt="CEVA Logistics"></div>
+    <div class="client-logo"><img src="logo3.svg" alt="Trends Group"></div>
+    <div class="client-logo"><img src="logo4.svg" alt="O!Save Trading"></div>
+    <div class="client-logo"><img src="logo5.svg" alt="Supremacy International"></div>
+    <div class="client-logo"><img src="logo6.svg" alt="Vista Land"></div>
+    <div class="client-logo"><img src="logo7.svg" alt="Bolloré Logistics"></div>
+    <div class="client-logo"><img src="logo8.svg" alt="Schneider Electric"></div>
+  </div>
 
-        <div class="client-logo">
-          <img src="logo1.svg" alt="Client logo 1">
-        </div>
+  <div class="actions">
+    <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
+      ▣ Download Company Profile
+    </a>
 
-        <div class="client-logo">
-          <img src="logo2.svg" alt="Client logo 2">
-        </div>
+    <a class="btn btn-outline" href="https://mail.google.com/mail/?view=cm&fs=1&to=info@decalauthority.ph&su=Project%20Inquiry%20-%20Decal%20Authority" target="_blank" rel="noopener">
+      Get a Quote →
+    </a>
+  </div>
 
-        <div class="client-logo">
-          <img src="logo3.svg" alt="Client logo 3">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo4.svg" alt="Client logo 4">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo5.svg" alt="Client logo 5">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo6.svg" alt="Client logo 6">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo7.svg" alt="Client logo 7">
-        </div>
-
-        <div class="client-logo">
-          <img src="logo8.svg" alt="Client logo 8">
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="actions">
-
-      <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
-        <span class="icon">▣</span>
-        Download Company Profile
-      </a>
-
-      <a class="btn btn-outline" href="mailto:info@decalauthority.ph?subject=Project%20Inquiry%20-%20Decal%20Authority">
-        Get A Quote
-        <span class="icon">→</span>
-      </a>
-
-    </div>
-
-    <div class="footer-note">
-      Fleet Branding · Facility Branding · Large Format Production · Brand Compliance Execution
-    </div>
+</div>
+```
 
   </section>
-
 </main>
 
 </body>
