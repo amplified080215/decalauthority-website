@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-Stage Specification Translation & Execution Methodology</title>
+    <meta name="description" content="How Decal Authority translates customer PDF specifications and brand requirements into durable physical executions.">
+    <!-- Pointing to your single style.css file -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar injected here by global.js -->
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- HEADER (Kept in HTML for SEO) -->
+        <section class="page-header-section">
+            <div class="header-container">
+                <span class="hero-label">OPERATIONAL METHODOLOGY</span>
+                <h1>The 07-Stage Execution Protocol & Collaborative Stress-Testing.</h1>
+                <div class="accent-line"></div>
+                <p>We do not tell customers “your idea is wrong.” Instead, we ask: <em>“That’s workable—but what happens if this occurs in the field?”</em> We challenge assumptions collaboratively so the customer retains ownership of a durable decision.</p>
+            </div>
+        </section>
+
+        <!-- STRESS-TESTING PHILOSOPHY (Injected via JSON) -->
+        <section class="stress-test-section bg-light">
+            <div class="section-container">
+                <div class="stress-test-grid" id="json-stress-test">
+                    <!-- Data loads here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 07-STAGE PROTOCOL (Injected via JSON) -->
+        <section class="protocol-section">
+            <div class="section-container" style="max-width: 900px;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <span class="hero-label">THE WORKFLOW</span>
+                    <h2 style="font-size: 2.2rem; color: var(--color-navy);">From Intent to Physical Reality</h2>
+                </div>
+
+                <div class="protocol-list" id="json-protocol">
+                    <!-- Data loads here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer injected here by global.js -->
+    <div id="global-footer"></div>
+
+    <!-- Core Scripts -->
+    <script src="/global.js"></script>
+
+    <!-- JSON Fetch Script for Methodology -->
+    <script>
+        fetch('/data/methodology.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Stress-Test Section
+                const stressTestContainer = document.getElementById('json-stress-test');
+                const st = data.stressTest;
+                const paragraphsHtml = st.paragraphs.map(p => `<p>${p}</p>`).join('');
+                
+                stressTestContainer.innerHTML = `
+                    <div class="stress-test-text">
+                        <span class="hero-label">${st.label}</span>
+                        <h2>${st.title}</h2>
+                        ${paragraphsHtml}
+                    </div>
+                    <div class="stress-test-box">
+                        <div class="st-question-label">${st.callout.questionLabel}</div>
+                        <div class="st-question">${st.callout.question}</div>
+                        <div class="st-answer-label">${st.callout.answerLabel}</div>
+                        <div class="st-answer">${st.callout.answer}</div>
+                    </div>
+                `;
+
+                // 2. Build Protocol List
+                const protocolContainer = document.getElementById('json-protocol');
+                data.protocol.forEach(item => {
+                    protocolContainer.innerHTML += `
+                        <div class="protocol-item">
+                            <div class="protocol-stage">${item.stage}</div>
+                            <div class="protocol-content">
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            })
+            .catch(error => console.error('Error loading methodology data:', error));
+    </script>
+</body>
+</html>
