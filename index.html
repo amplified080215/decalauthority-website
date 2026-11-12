@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Execution Systems — Fleet & Commercial Branding</title>
+    <meta name="description" content="Decal Authority converts corporate brand specifications into durable, repeatable physical fleet and facility systems with controlled downtime.">
+    <link rel="preload" href="/assets/css/style.css?v=1.4" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.4">
+</head>
+<body>
+    
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- 1. HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text-content">
+                    <span class="hero-label">BRAND EXECUTION SYSTEMS</span>
+                    <h1>Brand Standards,<br><span class="highlight">Executed.</span></h1>
+                    
+                    <p class="hero-subtext">Anyone can print a sticker. We engineer what happens after it leaves the printer—converting corporate brand specifications into durable, repeatable physical fleet and facility systems with controlled downtime.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="/contacts/" class="btn btn-primary">Start a Project</a>
+                        <a href="#product-selector" class="btn btn-secondary">Explore Options</a>
+                    </div>
+                </div>
+
+                <div class="hero-image-content">
+                    <div class="hero-big-logo">
+                        <img src="/assets/images/brand.svg" alt="Decal Authority Logo" class="hero-logo-brand">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CORPORATE CLIENTS MARQUEE (Hidden on Mobile) -->
+        <section class="corporate-section hide-on-mobile">
+            <h2 class="corporate-title">Corporate <span class="dot">•</span> Industrial <span class="dot">•</span> Multi-Site Deployments</h2>
+            <p class="executed-for">EXECUTED FOR</p>
+            <div class="marquee-wrapper">
+                <div class="marquee-track" id="client-marquee-track">
+                    <!-- Injected by global.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. VERIFIED PROOF METRICS -->
+        <section class="metrics-section">
+            <div class="metrics-grid" id="json-metrics"></div>
+        </section>
+
+        <!-- 4. THE CORE DIFFERENCE -->
+        <section class="difference-section">
+            <div class="difference-header">
+                <h2>A specification is not finished simply because the PDF looks right.</h2>
+                <div class="accent-line"></div>
+                <p>What you see on the screen must match the physical output on the vehicle. Most branding failures happen when a supplier blindly prints a file without engineering for substrate seams or fleet dispatch schedules.</p>
+            </div>
+            <div class="difference-grid" id="json-differences"></div>
+        </section>
+
+        <!-- 5. PRODUCTIZED ENTRY / SELECTOR -->
+        <section id="product-selector" class="selector-section bg-light">
+            <div class="section-container">
+                <h2>Not sure what you need? Start with your vehicle.</h2>
+                <p class="section-sub">Select your asset below to explore indicative options and starting parameters.</p>
+                <div class="selector-grid" id="json-selector"></div>
+            </div>
+        </section>
+
+        <!-- 6. PROOF / CASE STUDY -->
+        <section class="case-study-section">
+            <div class="case-study-grid" id="json-case-study"></div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+
+    <script src="/global.js?v=1.4"></script>
+
+    <script>
+        fetch('/data/home.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Metrics
+                const metricsContainer = document.getElementById('json-metrics');
+                data.metrics.forEach(metric => {
+                    const suffixStyle = metric.suffix.includes('HRS') || metric.suffix.includes('HUBS') 
+                        ? `<span class="metric-small">${metric.suffix}</span>` 
+                        : `<span class="highlight">${metric.suffix}</span>`;
+                    
+                    metricsContainer.innerHTML += `
+                        <div class="metric-card">
+                            <div class="metric-number">${metric.number}${suffixStyle}</div>
+                            <div class="metric-label">${metric.label}</div>
+                            <p>${metric.description}</p>
+                        </div>
+                    `;
+                });
+
+                // 2. Build Differences
+                const diffContainer = document.getElementById('json-differences');
+                const std = data.differences.standard;
+                const da = data.differences.decalAuthority;
+                diffContainer.innerHTML = `
+                    <div class="diff-card standard-shop">
+                        <div class="diff-label">${std.label}</div>
+                        <h3>${std.title}</h3>
+                        <ul>${std.points.map(p => `<li>${p}</li>`).join('')}</ul>
+                    </div>
+                    <div class="diff-card decal-authority">
+                        <div class="diff-label highlight-label">${da.label}</div>
+                        <h3>${da.title}</h3>
+                        <ul>${da.points.map(p => `<li>${p}</li>`).join('')}</ul>
+                    </div>
+                `;
+
+                // 3. Build Selector
+                const selectorContainer = document.getElementById('json-selector');
+                data.selector.forEach(item => {
+                    selectorContainer.innerHTML += `
+                        <div class="selector-card">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <a href="${item.link}" class="contact-link">${item.cta}</a>
+                        </div>
+                    `;
+                });
+
+                // 4. Build Case Study
+                const caseContainer = document.getElementById('json-case-study');
+                const cs = data.caseStudy;
+                
+                let statsHtml = '';
+                cs.stats.forEach(stat => {
+                    const highlightClass = stat.highlight ? 'highlight' : '';
+                    statsHtml += `
+                        <div class="stat-box">
+                            <div class="stat-num ${highlightClass}">${stat.number}</div>
+                            <div class="stat-desc">${stat.label}</div>
+                        </div>
+                    `;
+                });
+
+                caseContainer.innerHTML = `
+                    <div class="case-content">
+                        <span class="hero-label" style="color: var(--color-mustard);">${cs.label}</span>
+                        <h2>${cs.title}</h2>
+                        <p>${cs.description}</p>
+                        <a href="${cs.link}" class="btn btn-secondary" style="margin-top: 20px; display: inline-block;">${cs.cta}</a>
+                    </div>
+                    <div class="case-stats">
+                        ${statsHtml}
+                    </div>
+                `;
+            })
+            .catch(error => console.error('Error loading home data:', error));
+    </script>
+</body>
+</html>
