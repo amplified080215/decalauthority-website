@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Graphics Philippines: Technical Execution & Downtime Control</title>
+    <meta name="description" content="Technical authority guide to commercial fleet graphics in the Philippines. Overlap doctrine, knifeless tape protocol, backing opacity, and 3–4 hour vehicle downtime control.">
+    <!-- Single CSS Link -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar injected here by global.js -->
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- HEADER (Kept in HTML for SEO indexing) -->
+        <section class="page-header-section">
+            <div class="header-container">
+                <span class="hero-label">TECHNICAL AUTHORITY DOCUMENT // DA-TDS-01</span>
+                <h1>Fleet Graphics in the Philippines: Technical Execution, Materials & Downtime Control.</h1>
+                <div class="accent-line"></div>
+                <p>Written for fleet managers, logistics operators, and procurement officers. This document outlines how Decal Authority engineers commercial vehicle graphics to survive tropical UV exposure, high-pressure depot washing, and multi-unit dispatch constraints.</p>
+            </div>
+        </section>
+
+        <!-- THREE PROPRIETARY DOCTRINES (Injected via JSON) -->
+        <section class="doctrines-section">
+            <div class="section-container">
+                <span class="hero-label">TECHNICAL DATA SHEET</span>
+                <h2 class="section-title">Three Proprietary Field Execution Doctrines</h2>
+                <div class="doctrines-grid" id="json-doctrines"></div>
+            </div>
+        </section>
+
+        <!-- MATERIAL ARCHITECTURE (Injected via JSON) -->
+        <section class="materials-section">
+            <div class="materials-grid">
+                <div class="materials-header">
+                    <span class="hero-label">MATERIAL ARCHITECTURE</span>
+                    <h2>Film Selection, Backing Opacity & Lamination</h2>
+                </div>
+                <div class="materials-list" id="json-materials"></div>
+            </div>
+        </section>
+
+        <!-- HOW TO START & SUPPORTED PLATFORMS (Injected via JSON) -->
+        <section class="platforms-section bg-light">
+            <div class="platforms-grid section-container">
+                <div class="platform-block">
+                    <span class="hero-label">SUPPORTED PLATFORMS</span>
+                    <h3>Commercial Vehicles We Execute</h3>
+                    <ul id="json-platforms"></ul>
+                </div>
+                <div class="platform-block">
+                    <span class="hero-label">HOW TO START</span>
+                    <h3>What You Need to Provide</h3>
+                    <p class="platforms-subtext">You do not need a finished engineering blueprint to begin. Bring us any of the following:</p>
+                    <ul id="json-requirements"></ul>
+                    <a href="/contacts/" class="btn btn-primary" style="margin-top: 25px; display: inline-block;">Send an Inquiry</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer injected here by global.js -->
+    <div id="global-footer"></div>
+
+    <script src="/global.js"></script>
+
+    <!-- Script to construct the page from fleet.json -->
+    <script>
+        fetch('/data/fleet.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Doctrines
+                const doctrinesContainer = document.getElementById('json-doctrines');
+                data.doctrines.forEach(doc => {
+                    const badgeHtml = doc.badge ? `<div class="verified-badge">${doc.badge}</div>` : '';
+                    doctrinesContainer.innerHTML += `
+                        <div class="doctrine-card">
+                            <div class="doctrine-label">${doc.label}</div>
+                            <h3>${doc.title}</h3>
+                            <p>${doc.description}</p>
+                            ${badgeHtml}
+                        </div>
+                    `;
+                });
+
+                // 2. Build Materials
+                const materialsContainer = document.getElementById('json-materials');
+                data.materials.forEach(mat => {
+                    materialsContainer.innerHTML += `
+                        <div class="material-item">
+                            <strong>${mat.title}</strong>
+                            <p>${mat.description}</p>
+                        </div>
+                    `;
+                });
+
+                // 3. Build Platforms List
+                const platformsContainer = document.getElementById('json-platforms');
+                data.platforms.forEach(platform => {
+                    platformsContainer.innerHTML += `<li>${platform}</li>`;
+                });
+
+                // 4. Build Requirements List
+                const reqsContainer = document.getElementById('json-requirements');
+                data.requirements.forEach(req => {
+                    reqsContainer.innerHTML += `<li>${req}</li>`;
+                });
+
+            })
+            .catch(error => console.error('Error loading fleet data:', error));
+    </script>
+</body>
+</html>
