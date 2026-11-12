@@ -1,0 +1,53 @@
+{
+  "doctrines": [
+    {
+      "label": "DOCTRINE 01",
+      "title": "Aerodynamic Seam Integrity (The Overlap Doctrine)",
+      "description": "When multi-panel graphics are installed front-to-back, forward highway wind resistance forces air and dirt particles directly into the exposed seam edge, causing premature peeling. We execute a strict <strong>Back-to-Front Overlap Sequence</strong> so wind deflects cleanly over every seam.",
+      "badge": null
+    },
+    {
+      "label": "DOCTRINE 02",
+      "title": "Variable Chassis Calibration (Knifeless Tape Trim)",
+      "description": "Cutting vinyl directly on a commercial vehicle body with a steel blade slices the factory clearcoat and invites rust along panel seams. We utilize an embedded <strong>Knifeless Tape Precision Trimming Protocol</strong>—achieving exact contours with zero blade-to-paint contact.",
+      "badge": null
+    },
+    {
+      "label": "DOCTRINE 03",
+      "title": "Adaptive Deployment Phasing (Fixed Downtime Outcome)",
+      "description": "Master installer discretion combines Sequential Panel Installation and Monolithic Rapid-Hinge techniques with 100% off-site pre-kitting. The operational outcome is a predictable <strong>3–4 hour time-on-asset window</strong> per vehicle.",
+      "badge": "VERIFIED SOP: 3-4 HOURS"
+    }
+  ],
+  "materials": [
+    {
+      "title": "Cast vs. Calendared Vinyl",
+      "description": "Calendared films retain calendering memory and shrink under heat if stretched into deep wing-van corrugations. We match polymeric or cast vinyl strictly to the geometry of the substrate and expected service cycle."
+    },
+    {
+      "title": "White, Grey & Black Blocking Adhesive",
+      "description": "Standard white-backed vinyl can appear translucent under direct sunlight when applied over dark truck paint or existing lettering. Where substrate blocking is required, we specify grey or black opaque adhesive backing so brand colors remain true."
+    },
+    {
+      "title": "Micron Thickness & Overlaminate Compatibility",
+      "description": "Pairing a rigid monomeric laminate with a conformable base film causes differential shrinkage, edge curling, and cracking. We pair compatible film classes and enforce mandatory ink curing/outgassing intervals before lamination."
+    },
+    {
+      "title": "Reflectorized & LTFRB Compliance Markings",
+      "description": "Retro-reflective conspicuity strips, operator identification, and unit numbering systems engineered for nighttime highway visibility and resistance to high-pressure depot washing."
+    }
+  ],
+  "platforms": [
+    "6-Wheeler & 10-Wheeler Wing Vans (Cut-out & full panel systems)",
+    "4-Wheeler & 6-Wheeler Closed Delivery Vans (Composite & corrugated)",
+    "L300 & Light Commercial Utility Fleets",
+    "Tractor Heads, Trailers & Tanker Units",
+    "Corporate Pickups, Field Engineering SUVs & Donated Institutional Units"
+  ],
+  "requirements": [
+    "An approved corporate PDF specification (like CEVA)",
+    "A brand logo and photos of your actual vehicles",
+    "An existing fleet standard you need replicated across new units",
+    "A peeling or failed previous installation that needs proper re-engineering"
+  ]
+}

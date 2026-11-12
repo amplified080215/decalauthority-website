@@ -1,0 +1,42 @@
+{
+  "hubs": [
+    {
+      "branch": "Bustos",
+      "type": "Headquarters",
+      "services": "Large-format printing, vinyl plotting, panel pre-kitting, and full-scale 6-wheeler wing van in-bay installations.",
+      "shopImage": "/assets/images/locations/bustos-shop.jpg",
+      "mapImage": "/assets/images/locations/bustos-map.jpg",
+      "mapUrl": "https://maps.google.com/?q=Decal+Authority+Bustos"
+    },
+    {
+      "branch": "San Rafael",
+      "type": "Execution Hub",
+      "services": "Commercial wraps, cut-out decals, and multi-unit staged fleet deployments along the Maharlika Highway corridor.",
+      "shopImage": "/assets/images/locations/sanrafael-shop.jpg",
+      "mapImage": "/assets/images/locations/sanrafael-map.jpg",
+      "mapUrl": "https://maps.google.com/?q=Decal+Authority+San+Rafael"
+    },
+    {
+      "branch": "Malolos",
+      "type": "Operations Hub",
+      "services": "Strategic deployment base serving MacArthur Highway and NLEX logistics routes for quick turnaround executions.",
+      "shopImage": "/assets/images/locations/malolos-shop.jpg",
+      "mapImage": "/assets/images/locations/malolos-map.jpg",
+      "mapUrl": "https://maps.google.com/?q=Decal+Authority+Malolos"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you install at our logistics depot or your shop?",
+      "answer": "Both. For single units or prototype runs, we highly recommend dispatching the vehicle to one of our three Bulacan hubs for a controlled, dust-free installation. For high-volume fleet rollouts (10+ units), our teams deploy directly to your depot to execute the pre-kitted panels on-site."
+    },
+    {
+      "question": "What areas do you service outside Bulacan?",
+      "answer": "Our primary deployment radius covers all of Metro Manila, Central Luzon (Region 3), and Northern Luzon. For national fleet rollouts extending to Visayas and Mindanao, we execute specialized pre-kitted packages combined with local installation oversight."
+    },
+    {
+      "question": "Can you execute installations overnight or on weekends?",
+      "answer": "Yes. We understand that commercial assets must be on the road during revenue hours. We coordinate with your dispatch team to schedule installations during your operational downtime, including night shifts and weekend bay availability."
+    }
+  ]
+}

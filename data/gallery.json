@@ -1,0 +1,39 @@
+{
+  "caseStudy": {
+    "label": "FEATURED DEPLOYMENT",
+    "title": "O!Save Trading Philippines",
+    "subtext": "13 Commercial Vehicles. 48 Hours. Zero Dispatch Disruption.",
+    "description": "For the O!Save DC3 rollout, our objective was to eliminate fleet downtime. By shifting 100% of the panel trimming off-site and applying our Knifeless Tape Protocol in-bay, Decal Authority branded 13 full commercial vehicles within a 48-hour window—averaging just 3 to 4 hours of time-on-asset per unit.",
+    "image": "/assets/images/gallery/osave-featured.jpg",
+    "stats": [
+      { "number": "13", "desc": "Commercial Units" },
+      { "number": "48", "desc": "Hour Window" },
+      { "number": "3-4", "desc": "Hrs Downtime/Unit" }
+    ]
+  },
+  "grandGallery": {
+    "label": "PRODUCTION ARCHIVE",
+    "title": "Execution Gallery",
+    "row1": [
+      "/assets/images/gallery/small/row1-img1.jpg",
+      "/assets/images/gallery/small/row1-img2.jpg",
+      "/assets/images/gallery/small/row1-img3.jpg",
+      "/assets/images/gallery/small/row1-img4.jpg",
+      "/assets/images/gallery/small/row1-img5.jpg",
+      "/assets/images/gallery/small/row1-img6.jpg"
+    ],
+    "row2": [
+      "/assets/images/gallery/truck/row2-img1.jpg",
+      "/assets/images/gallery/truck/row2-img2.jpg",
+      "/assets/images/gallery/truck/row2-img3.jpg",
+      "/assets/images/gallery/truck/row2-img4.jpg",
+      "/assets/images/gallery/truck/row2-img5.jpg",
+      "/assets/images/gallery/truck/row2-img6.jpg"
+    ]
+  },
+  "osaveMarquee": [
+    "/assets/images/gallery/osave/1.jpg",
+    "/assets/images/gallery/osave/2.jpg",
+    "/assets/images/gallery/osave/3.jpg"
+  ]
+}
