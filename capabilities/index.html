@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Branding, Facility Signage & Large-Format Capabilities</title>
+    <meta name="description" content="Commercial vehicle wraps, wing-van graphics, LTFRB reflectorized markings, projection-mapped glass film, OSHA/BFP signage, and annual billboard graphics.">
+    <!-- Pointing to your single style.css file -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar injected here by global.js -->
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- HEADER (Kept in HTML for SEO) -->
+        <section class="page-header-section">
+            <div class="header-container">
+                <span class="hero-label">CORE SERVICES & SYSTEMS</span>
+                <h1>Fleet, Facility & Large-Format Execution Systems.</h1>
+                <div class="accent-line"></div>
+                <p>Our production network utilizes large-format eco-solvent printing systems and precision plotter cutting equipment engineered for high-volume commercial deployments.</p>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES LIST (Injected via JSON) -->
+        <section class="capabilities-section">
+            <div class="section-container" id="json-capabilities">
+                <!-- Capabilities data loads here -->
+            </div>
+        </section>
+
+        <!-- SEAMLESS FAQS (Injected via JSON) -->
+        <section class="faq-section bg-light">
+            <div class="section-container" style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="hero-label">PROCUREMENT & SCHEDULING</span>
+                    <h2 style="font-size: 2rem; color: var(--color-navy);">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="faq-container" id="json-faqs">
+                    <!-- FAQ data loads here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer injected here by global.js -->
+    <div id="global-footer"></div>
+
+    <script src="/global.js"></script>
+
+    <!-- Script to construct the page from capabilities.json -->
+    <script>
+        fetch('/data/capabilities.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Capabilities Rows
+                const grid = document.getElementById('json-capabilities');
+                data.categories.forEach(category => {
+                    const itemsHtml = category.items.map(item => `
+                        <div class="cap-item">
+                            <strong>${item.name}</strong>
+                            <p>${item.desc}</p>
+                        </div>
+                    `).join('');
+
+                    grid.innerHTML += `
+                        <div class="capability-row">
+                            <div class="cap-header">
+                                <span class="hero-label">${category.number} / ${category.label}</span>
+                                <h2>${category.title}</h2>
+                            </div>
+                            <div class="cap-details">
+                                ${itemsHtml}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // 2. Build FAQs
+                const faqContainer = document.getElementById('json-faqs');
+                data.faqs.forEach(faq => {
+                    faqContainer.innerHTML += `
+                        <details class="faq-item">
+                            <summary>${faq.question}</summary>
+                            <div class="faq-answer">${faq.answer}</div>
+                        </details>
+                    `;
+                });
+
+            })
+            .catch(error => console.error('Error loading capabilities data:', error));
+    </script>
+</body>
+</html>
