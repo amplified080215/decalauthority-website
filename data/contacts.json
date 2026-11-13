@@ -1,0 +1,34 @@
+{
+  "contactInfo": {
+    "call": {
+      "label": "01 / DIRECT PHONE",
+      "primary": "+63 927 728 4414",
+      "secondary": "Landlines: (044) 462 6502 | (044) 798 2898"
+    },
+    "email": {
+      "label": "02 / EMAIL DESKS",
+      "primary": "info@decalauthority.ph",
+      "branches": [
+        { "title": "Bustos HQ", "address": "bustos@decalauthority.ph" },
+        { "title": "San Rafael", "address": "sanrafael@decalauthority.ph" },
+        { "title": "Malolos", "address": "malolos@decalauthority.ph" }
+      ]
+    },
+    "social": {
+      "label": "03 / SOCIAL MEDIA",
+      "name": "Decal Authority",
+      "displayLink": "@DecalAuthority.official",
+      "link": "https://facebook.com/DecalAuthority.official"
+    }
+  },
+  "builder": {
+    "title": "Inquiry Builder",
+    "subtext": "Structure your requirement below for a streamlined corporate or personal quotation."
+  },
+  "hubs": {
+    "primary": { "email": "info@decalauthority.ph", "messenger": "decalauthority" },
+    "sanrafael": { "email": "sanrafael@decalauthority.ph", "messenger": "decalauthoritysanrafael" },
+    "bustos": { "email": "bustos@decalauthority.ph", "messenger": "decalauthoritybustos" },
+    "malolos": { "email": "malolos@decalauthority.ph", "messenger": "decalauthoritymalolos" }
+  }
+}

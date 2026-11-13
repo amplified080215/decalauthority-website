@@ -1,0 +1,46 @@
+{
+  "metrics": [
+    { "number": "835", "suffix": "+", "label": "Documented Projects", "description": "Executed across Luzon since 2018" },
+    { "number": "325", "suffix": "+", "label": "Fleet Units Branded", "description": "Commercial trucks & service units" },
+    { "number": "3–4", "suffix": " HRS", "label": "Avg. Vehicle Downtime", "description": "Predictable time-on-asset windows" },
+    { "number": "3", "suffix": " HUBS", "label": "Bulacan Operations", "description": "Bustos HQ, San Rafael & Malolos" }
+  ],
+  "differences": {
+    "standard": {
+      "label": "THE STANDARD PRINT SHOP",
+      "title": "Blind File Printing",
+      "points": [
+        "Prints whatever file was sent without verifying actual truck body dimensions.",
+        "Uses generic white backing that allows old paint to bleed through.",
+        "Skips ink curing before lamination, causing edge lifting."
+      ]
+    },
+    "decalAuthority": {
+      "label": "DECAL AUTHORITY",
+      "title": "Physical Spec Translation",
+      "points": [
+        "Converts corporate PDFs into exact vehicle-calibrated production specs.",
+        "Applies our Knifeless Tape Protocol for zero paint damage.",
+        "Pre-kits panels off-site to hold vehicle downtime to 3–4 hours."
+      ]
+    }
+  },
+  "selector": [
+    { "title": "Small Commercial Vehicle", "description": "L300, Travis, Tamaraw, and utility fleets.", "link": "/contacts/", "cta": "Request Pricing &rarr;" },
+    { "title": "Large Commercial Truck", "description": "4-Wheelers, 6-Wheelers, and Wing-Vans.", "link": "/contacts/", "cta": "Request Pricing &rarr;" },
+    { "title": "Multi-Unit Fleet", "description": "Standardized rollouts for 5 to 50+ vehicles.", "link": "/contacts/", "cta": "Consult with us &rarr;" },
+    { "title": "Facility & Facility Glass", "description": "Office branding, signage, and glass frosting.", "link": "/contacts/", "cta": "Consult with us &rarr;" }
+  ],
+  "caseStudy": {
+    "label": "DOCUMENTED DEPLOYMENT PROOF",
+    "title": "O!Save Trading Philippines: 13 Commercial Vehicles Deployed in 2 Days.",
+    "description": "Across multiple deployments, Decal Authority has branded more than 50 commercial trucks for O!Save. In our documented DC3 rollout, 13 commercial vehicles were completed within a 2-day window while maintaining an average vehicle downtime of just 3–4 hours per unit.",
+    "link": "/gallery/",
+    "cta": "View Project Gallery",
+    "stats": [
+      { "number": "13", "label": "Commercial Vehicles", "highlight": true },
+      { "number": "2 Days", "label": "Deployment Period", "highlight": false },
+      { "number": "3-4 Hrs", "label": "Vehicle Downtime", "highlight": true }
+    ]
+  }
+}

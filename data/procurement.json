@@ -1,0 +1,36 @@
+{
+  "snapshot": [
+    {
+      "label": "Operating Brand",
+      "value": "Decal Authority",
+      "customClass": "font-bold"
+    },
+    {
+      "label": "Registered Legal Entity",
+      "value": "Decal-Authority-OL Sticker Trading",
+      "customClass": "font-mono"
+    },
+    {
+      "label": "Established",
+      "value": "2018",
+      "customClass": ""
+    },
+    {
+      "label": "Compliance & Registration",
+      "value": "DTI Registered • BIR Registered • BMBE Registered<br><span class=\"text-muted\">(Supporting documentation provided upon request)</span>",
+      "customClass": ""
+    },
+    {
+      "label": "Service Coverage",
+      "value": "Metro Manila, Central Luzon, Northern Luzon",
+      "customClass": ""
+    }
+  ],
+  "philosophy": {
+    "title": "“We don’t discount the execution. We reduce the scope.”",
+    "paragraphs": [
+      "We do not publish a generic per-square-foot sticker price list, nor do we cut material quality to win a bid. When a vendor arbitrarily slashes their price by 30% without changing the scope, they recover that margin by skipping surface decontamination, omitting overlaminate, or using uncalibrated vinyl.",
+      "At Decal Authority, execution standards are fixed. If a project requires a lower budget ceiling, we work with your procurement and operations team to adjust the specification or coverage scope—delivering a smaller or simpler system executed to the exact same durability standard."
+    ]
+  }
+}

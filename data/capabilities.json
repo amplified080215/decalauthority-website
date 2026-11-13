@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "number": "01",
+      "label": "FLEET BRANDING",
+      "title": "Commercial Fleet & Vehicle Systems",
+      "items": [
+        { "name": "Full & Partial Vehicle Wraps", "desc": "Engineered commercial wraps and sponsored truck panels calibrated to panel seams and compound curves." },
+        { "name": "Wing-Van & Box Truck Cut-Outs", "desc": "High-durability plotter-cut vinyl and panel graphics (executed for TRENDS, O!Save, and logistics operators)." },
+        { "name": "Fleet Standardization & Re-Branding", "desc": "Multi-unit rollout deployments ensuring uniform color, placement, and material specs across 10 to 100+ units." },
+        { "name": "LTFRB & Reflectorized Compliance", "desc": "Regulatory vehicle markings, unit numbers, and retro-reflective safety decals (executed for Casangcapan Guinto Enterprise since 2021)." }
+      ]
+    },
+    {
+      "number": "02",
+      "label": "FACILITY BRANDING",
+      "title": "Corporate Environments & Industrial Signage",
+      "items": [
+        { "name": "Projection-Mapped Glass & Office Frosted Film", "desc": "Off-site pre-cut Avery Dennison window film with projector-assisted registration mapping and zero on-site cutting tolerance (executed for Supremacy International)." },
+        { "name": "Fire / OSHA / BFP & Workstation Signage", "desc": "Regulatory safety signage, directional wayfinding, and industrial operational signage (executed for O!Save DC9 and SIAEC)." }
+      ]
+    },
+    {
+      "number": "03",
+      "label": "LARGE FORMAT",
+      "title": "Billboards, Panaflex & Site Assets",
+      "items": [
+        { "name": "Annual Billboard Graphics Supply", "desc": "Weather-resistant large-format outdoor graphics for real estate developers and commercial enterprises (executed for Vista Land)." },
+        { "name": "Panaflex & Industrial Site Systems", "desc": "Illuminated and non-illuminated commercial signage and construction site branding systems." }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you offer generic per-square-foot pricing?",
+      "answer": "No. We productize our pricing based on the vehicle class, coverage requirement, and material engineering. Generic pricing often leads to vendors cutting corners on backing opacity or skipping lamination to hit a budget. We lock in the execution standard and adjust the scope if budget constraints apply."
+    },
+    {
+      "question": "What is your standard vehicle downtime?",
+      "answer": "For standard commercial executions (like 6-wheeler wing vans or closed vans), our verified time-on-asset is 3 to 4 hours per unit. We achieve this by 100% off-site pre-kitting and sequential panel installation."
+    },
+    {
+      "question": "Can you execute from an existing corporate PDF?",
+      "answer": "Yes. Most of our corporate clients supply an approved PDF specification. We act as the translation layer, calibrating that 2D file to the actual physical dimensions, panel seams, and corrugations of your specific fleet assets."
+    },
+    {
+      "question": "Are you a fully registered vendor?",
+      "answer": "Yes. Decal Authority (Decal-Authority-OL Sticker Trading) is fully DTI, BIR, and BMBE registered. We provide complete supporting documentation for your corporate vendor accreditation process upon request."
+    }
+  ]
+}

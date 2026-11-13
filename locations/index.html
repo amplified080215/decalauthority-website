@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations</title>
+    <meta name="description" content="Contact our three Bulacan operation hubs in Bustos, San Rafael, and Malolos serving Metro Manila, Central & Northern Luzon.">
+    <!-- Pointing to your single style.css file -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar injected here by global.js -->
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- HEADER (Kept in HTML for SEO) -->
+        <section class="page-header-section">
+            <div class="header-container">
+                <span class="hero-label">OPERATION HUBS & COVERAGE</span>
+                <h1>Three Bulacan Locations Serving Metro Manila, Central & Northern Luzon.</h1>
+                <div class="accent-line"></div>
+                <p>Strategically positioned along the Plaridel Bypass, Maharlika Highway, and MacArthur/NLEX corridors to support both in-bay fleet executions and on-site depot rollouts.</p>
+            </div>
+        </section>
+
+        <!-- DYNAMIC LOCATIONS LIST (Injected via JSON) -->
+        <section class="locations-section" style="padding: 60px 5%; background-color: #F8F9FA;">
+            <div class="section-container">
+                <div id="json-locations" class="location-list">
+                    <!-- Branch cards load here --> 
+                </div>
+            </div>
+        </section>
+
+        <!-- SEAMLESS FAQS (Injected via JSON) -->
+        <section class="faq-section">
+            <div class="section-container" style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="hero-label">DEPLOYMENT LOGISTICS</span>
+                    <h2 style="font-size: 2rem; color: var(--color-navy);">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="faq-container" id="json-faqs">
+                    <!-- FAQs load here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer injected here by global.js -->
+    <div id="global-footer"></div>
+    
+    <!-- Core Scripts -->
+    <script src="/global.js"></script>
+
+    <!-- JSON Fetch Script for Locations -->
+    <script>
+        fetch('/data/locations.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Location Hubs
+                const locationsGrid = document.getElementById('json-locations');
+                data.hubs.forEach(loc => {
+                    locationsGrid.innerHTML += `
+                        <div class="location-card">
+                            <div class="location-images">
+                                <img src="${loc.shopImage}" alt="${loc.branch} Shop" class="shop-img" loading="lazy">
+                                <img src="${loc.mapImage}" alt="${loc.branch} Map" class="map-img" loading="lazy">
+                            </div>
+                            <div class="location-content">
+                                <div class="location-header">
+                                    <h2 style="font-size: 1.6rem; color: var(--color-navy); margin: 0;">Decal Authority ${loc.branch}</h2>
+                                    <span class="branch-badge">${loc.type}</span>
+                                </div>
+                                <p style="margin-bottom: 25px;">${loc.services}</p>
+                                <a href="${loc.mapUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="align-self: flex-start; font-size: 0.85rem; padding: 10px 20px;">
+                                    View on Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // 2. Build FAQs
+                const faqContainer = document.getElementById('json-faqs');
+                data.faqs.forEach(faq => {
+                    faqContainer.innerHTML += `
+                        <details class="faq-item">
+                            <summary>${faq.question}</summary>
+                            <div class="faq-answer">${faq.answer}</div>
+                        </details>
+                    `;
+                });
+
+            })
+            .catch(error => {
+                console.error('Error loading locations data:', error);
+                document.getElementById('json-locations').innerHTML = '<p>Error loading branch locations. Please contact us directly.</p>';
+            });
+    </script>
+</body>
+</html>

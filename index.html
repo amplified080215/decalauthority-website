@@ -1,480 +1,164 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Decal Authority</title>
-<meta name="description" content="Decal Authority is a Bulacan-based brand execution company for fleet branding, facility branding, large-format production, and corporate visual implementation.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-<style>
-:root{
-  --navy:#101b46;
-  --yellow:#f6c400;
-  --gray:#6f6f6f;
-  --light:#ffffff;
-  --line:#d9d9d9;
-  --black:#111111;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-html,
-body{
-  width:100%;
-  min-height:100%;
-}
-
-body{
-  font-family:"Segoe UI", Arial, sans-serif;
-  background:#ffffff;
-  color:var(--navy);
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-.page{
-  min-height:100vh;
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:34px 22px;
-  background:
-    radial-gradient(circle at top, #ffffff 0%, #ffffff 48%, #fafafa 100%);
-}
-
-.hero{
-  width:100%;
-  max-width:1120px;
-  text-align:center;
-}
-
-.logo-wrap{
-  margin-bottom:28px;
-}
-
-.logo{
-  width:260px;
-  max-width:70vw;
-  height:auto;
-}
-
-.kicker{
-  font-size:15px;
-  letter-spacing:7px;
-  text-transform:uppercase;
-  color:var(--navy);
-  margin-bottom:62px;
-  font-weight:500;
-}
-
-.headline{
-  font-size:clamp(46px, 8.4vw, 88px);
-  line-height:.98;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-weight:900;
-  color:var(--navy);
-  margin-bottom:34px;
-}
-
-.yellow-dot{
-  color:var(--yellow);
-}
-
-.divider{
-  width:72px;
-  height:4px;
-  background:var(--yellow);
-  margin:0 auto 28px;
-  border-radius:100px;
-}
-
-.segments{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:56px;
-  color:#202020;
-  font-size:15px;
-  letter-spacing:8px;
-  text-transform:uppercase;
-}
-
-.segment-dot{
-  width:7px;
-  height:7px;
-  background:var(--yellow);
-  border-radius:50%;
-  display:inline-block;
-}
-
-.executed{
-  margin-bottom:36px;
-}
-
-.executed-label{
-  font-size:13px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-  color:#333;
-  margin-bottom:22px;
-  font-weight:700;
-}
-
-.logo-grid{
-  display:grid;
-  grid-template-columns:repeat(8, 1fr);
-  gap:0;
-  align-items:center;
-  border-top:0;
-  max-width:980px;
-  margin:0 auto;
-}
-
-.client-logo{
-  min-height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:8px 18px;
-  border-right:1px solid var(--line);
-}
-
-.client-logo:last-child{
-  border-right:none;
-}
-
-.client-logo img{
-  width:100%;
-  max-width:120px;
-  max-height:54px;
-  object-fit:contain;
-  filter:grayscale(1);
-  opacity:.72;
-}
-
-.actions{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  min-width:260px;
-  height:68px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  font-size:14px;
-  font-weight:800;
-  border-radius:4px;
-  transition:.2s ease;
-  cursor:pointer;
-}
-
-.btn-primary{
-  background:var(--yellow);
-  color:#111;
-  border:2px solid var(--yellow);
-  box-shadow:0 12px 28px rgba(246,196,0,.22);
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(246,196,0,.3);
-}
-
-.btn-outline{
-  background:#fff;
-  color:#111;
-  border:2px solid #111;
-}
-
-.btn-outline:hover{
-  transform:translateY(-2px);
-  background:#111;
-  color:#fff;
-}
-
-.icon{
-  font-size:22px;
-  line-height:1;
-}
-
-.footer-note{
-  margin-top:34px;
-  font-size:13px;
-  color:#777;
-  letter-spacing:1px;
-}
-
-@media(max-width:900px){
-  .page{
-    padding:42px 18px;
-  }
-
-  .kicker{
-    letter-spacing:6px;
-    margin-bottom:72px;
-  }
-
-  .segments{
-    letter-spacing:5px;
-    margin-bottom:70px;
-  }
-
-  .logo-grid{
-    grid-template-columns:repeat(4, 1fr);
-    row-gap:18px;
-  }
-
-  .client-logo:nth-child(4){
-    border-right:none;
-  }
-}
-
-@media(max-width:620px){
-  .page{
-    align-items:flex-start;
-    padding-top:56px;
-  }
-
-  .logo{
-    width:220px;
-  }
-
-  .logo-wrap{
-    margin-bottom:28px;
-  }
-
-  .kicker{
-    font-size:12px;
-    letter-spacing:4px;
-    margin-bottom:56px;
-  }
-
-  .headline{
-    font-size:clamp(42px, 14vw, 64px);
-    letter-spacing:1px;
-  }
-
-  .segments{
-    flex-direction:column;
-    gap:10px;
-    letter-spacing:4px;
-    font-size:12px;
-    margin-bottom:58px;
-  }
-
-  .segment-dot{
-    display:none;
-  }
-
-  .logo-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:18px 0;
-  }
-
-  .client-logo{
-    border-right:none;
-    min-height:58px;
-  }
-
-  .client-logo img{
-    max-width:118px;
-    max-height:48px;
-  }
-
-  .actions{
-    gap:14px;
-  }
-
-  .btn{
-    width:100%;
-    max-width:340px;
-    min-width:unset;
-    height:62px;
-  }
-}
-
-@media(max-height:760px) and (min-width:900px){
-  .page{
-    padding-top:26px;
-    padding-bottom:26px;
-  }
-
-  .logo{
-    width:220px;
-  }
-
-  .logo-wrap{
-    margin-bottom:20px;
-  }
-
-  .kicker{
-    margin-bottom:38px;
-  }
-
-  .headline{
-    font-size:68px;
-    margin-bottom:26px;
-  }
-
-  .divider{
-    margin-bottom:22px;
-  }
-
-  .segments{
-    margin-bottom:38px;
-  }
-
-  .executed{
-    margin-bottom:28px;
-  }
-
-  .footer-note{
-    margin-top:26px;
-  }
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Execution Systems — Fleet & Commercial Branding</title>
+    <meta name="description" content="Decal Authority converts corporate brand specifications into durable, repeatable physical fleet and facility systems with controlled downtime.">
+    <link rel="preload" href="/assets/css/style.css?v=1.4" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.4">
 </head>
-
 <body>
+    
+    <div id="global-nav"></div>
 
-<main class="page">
+    <main class="content-full">
+        <!-- 1. HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text-content">
+                    <span class="hero-label">BRAND EXECUTION SYSTEMS</span>
+                    <h1>Brand Standards,<br><span class="highlight">Executed.</span></h1>
+                    
+                    <p class="hero-subtext">Anyone can print a sticker. We engineer what happens after it leaves the printer—converting corporate brand specifications into durable, repeatable physical fleet and facility systems with controlled downtime.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="/contacts/" class="btn btn-primary">Start a Project</a>
+                        <a href="#product-selector" class="btn btn-secondary">Explore Options</a>
+                    </div>
+                </div>
 
-  <section class="hero" aria-label="Decal Authority Landing Page">
+                <div class="hero-image-content">
+                    <div class="hero-big-logo">
+                        <img src="/assets/images/brand.svg" alt="Decal Authority Logo" class="hero-logo-brand">
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- 2. CORPORATE CLIENTS MARQUEE (Hidden on Mobile) -->
+        <section class="corporate-section hide-on-mobile">
+            <h2 class="corporate-title">Corporate <span class="dot">•</span> Industrial <span class="dot">•</span> Multi-Site Deployments</h2>
+            <p class="executed-for">EXECUTED FOR</p>
+            <div class="marquee-wrapper">
+                <div class="marquee-track" id="client-marquee-track">
+                    <!-- Injected by global.js -->
+                </div>
+            </div>
+        </section>
 
-<div class="logo-wrap">
-  <img class="logo" src="brand.svg" alt="Decal Authority logo">
-</div>
+        <!-- 3. VERIFIED PROOF METRICS -->
+        <section class="metrics-section">
+            <div class="metrics-grid" id="json-metrics"></div>
+        </section>
 
-<div class="kicker">
-  Brand Execution Systems
-</div>
+        <!-- 4. THE CORE DIFFERENCE -->
+        <section class="difference-section">
+            <div class="difference-header">
+                <h2>A specification is not finished simply because the PDF looks right.</h2>
+                <div class="accent-line"></div>
+                <p>What you see on the screen must match the physical output on the vehicle. Most branding failures happen when a supplier blindly prints a file without engineering for substrate seams or fleet dispatch schedules.</p>
+            </div>
+            <div class="difference-grid" id="json-differences"></div>
+        </section>
 
-<h1 class="headline">
-  Brand Standards,<br>
-  Executed<span class="yellow-dot">.</span>
-</h1>
+        <!-- 5. PRODUCTIZED ENTRY / SELECTOR -->
+        <section id="product-selector" class="selector-section bg-light">
+            <div class="section-container">
+                <h2>Not sure what you need? Start with your vehicle.</h2>
+                <p class="section-sub">Select your asset below to explore indicative options and starting parameters.</p>
+                <div class="selector-grid" id="json-selector"></div>
+            </div>
+        </section>
 
-<div class="divider"></div>
+        <!-- 6. PROOF / CASE STUDY -->
+        <section class="case-study-section">
+            <div class="case-study-grid" id="json-case-study"></div>
+        </section>
+    </main>
 
-<div class="segments" aria-label="Service focus">
-  <span>Corporate</span>
-  <span class="segment-dot"></span>
-  <span>Industrial</span>
-  <span class="segment-dot"></span>
-  <span>Multi-Site Deployments</span>
-</div>
+    <div id="global-footer"></div>
 
-<div class="executed">
+    <script src="/global.js?v=1.4"></script>
 
-  <div class="executed-label">
-    Executed For
-  </div>
+    <script>
+        fetch('/data/home.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Metrics
+                const metricsContainer = document.getElementById('json-metrics');
+                data.metrics.forEach(metric => {
+                    const suffixStyle = metric.suffix.includes('HRS') || metric.suffix.includes('HUBS') 
+                        ? `<span class="metric-small">${metric.suffix}</span>` 
+                        : `<span class="highlight">${metric.suffix}</span>`;
+                    
+                    metricsContainer.innerHTML += `
+                        <div class="metric-card">
+                            <div class="metric-number">${metric.number}${suffixStyle}</div>
+                            <div class="metric-label">${metric.label}</div>
+                            <p>${metric.description}</p>
+                        </div>
+                    `;
+                });
 
-  <div class="logo-grid" aria-label="Selected executed brands">
+                // 2. Build Differences
+                const diffContainer = document.getElementById('json-differences');
+                const std = data.differences.standard;
+                const da = data.differences.decalAuthority;
+                diffContainer.innerHTML = `
+                    <div class="diff-card standard-shop">
+                        <div class="diff-label">${std.label}</div>
+                        <h3>${std.title}</h3>
+                        <ul>${std.points.map(p => `<li>${p}</li>`).join('')}</ul>
+                    </div>
+                    <div class="diff-card decal-authority">
+                        <div class="diff-label highlight-label">${da.label}</div>
+                        <h3>${da.title}</h3>
+                        <ul>${da.points.map(p => `<li>${p}</li>`).join('')}</ul>
+                    </div>
+                `;
 
-    <div class="client-logo">
-      <img src="logo1.svg" alt="Eagle Cement">
-    </div>
+                // 3. Build Selector
+                const selectorContainer = document.getElementById('json-selector');
+                data.selector.forEach(item => {
+                    selectorContainer.innerHTML += `
+                        <div class="selector-card">
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <a href="${item.link}" class="contact-link">${item.cta}</a>
+                        </div>
+                    `;
+                });
 
-    <div class="client-logo">
-      <img src="logo2.svg" alt="CEVA Logistics">
-    </div>
+                // 4. Build Case Study
+                const caseContainer = document.getElementById('json-case-study');
+                const cs = data.caseStudy;
+                
+                let statsHtml = '';
+                cs.stats.forEach(stat => {
+                    const highlightClass = stat.highlight ? 'highlight' : '';
+                    statsHtml += `
+                        <div class="stat-box">
+                            <div class="stat-num ${highlightClass}">${stat.number}</div>
+                            <div class="stat-desc">${stat.label}</div>
+                        </div>
+                    `;
+                });
 
-    <div class="client-logo">
-      <img src="logo3.svg" alt="Trends Group">
-    </div>
-
-    <div class="client-logo">
-      <img src="logo4.svg" alt="O!Save Trading">
-    </div>
-
-    <div class="client-logo">
-      <img src="logo5.svg" alt="Supremacy International">
-    </div>
-
-    <div class="client-logo">
-      <img src="logo6.svg" alt="Vista Land">
-    </div>
-
-    <div class="client-logo">
-      <img src="logo7.svg" alt="Bolloré Logistics">
-    </div>
-
-    <div class="client-logo">
-      <img src="logo8.svg" alt="Schneider Electric">
-    </div>
-
-  </div>
-
-</div>
-
-<div class="actions">
-
-  <a class="btn btn-primary" href="profile.pdf" target="_blank" rel="noopener">
-    <span class="icon">▣</span>
-    Download Company Profile
-  </a>
-
-  <a class="btn btn-outline" href="#" id="quoteButton">
-    Get A Quote
-    <span class="icon">→</span>
-  </a>
-
-</div>
-
-<div class="footer-note">
- REGISTERED ENTITY: DECAL-AUTHORITY-OL STICKER TRADING  |  ESTABLISHED: 2018  |  OPERATION HUBS: BUSTOS, MALOLOS, SAN RAFAEL
-</div>
-
-
-  </section>
-
-</main>
-
-<script>
-document.getElementById("quoteButton").addEventListener("click", function(event){
-  event.preventDefault();
-
-  const email = "info@decalauthority.ph";
-  const subject = "Project Inquiry - Decal Authority";
-
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if(isMobile){
-    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject);
-  }else{
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=" + encodeURIComponent(subject),
-      "_blank"
-    );
-  }
-});
-</script>
-
+                caseContainer.innerHTML = `
+                    <div class="case-content">
+                        <span class="hero-label" style="color: var(--color-mustard);">${cs.label}</span>
+                        <h2>${cs.title}</h2>
+                        <p>${cs.description}</p>
+                        <a href="${cs.link}" class="btn btn-secondary" style="margin-top: 20px; display: inline-block;">${cs.cta}</a>
+                    </div>
+                    <div class="case-stats">
+                        ${statsHtml}
+                    </div>
+                `;
+            })
+            .catch(error => console.error('Error loading home data:', error));
+    </script>
 </body>
 </html>

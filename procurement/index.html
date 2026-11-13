@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement & Supplier Qualification</title>
+    <meta name="description" content="Vendor qualification dossier for Decal-Authority-OL Sticker Trading. Scope-based commercial philosophy and corporate compliance.">
+    <!-- Pointing to your single style.css file -->
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Navbar injected here by global.js -->
+    <div id="global-nav"></div>
+
+    <main class="content-full">
+        <!-- HEADER (Kept in HTML for SEO) -->
+        <section class="page-header-section">
+            <div class="header-container">
+                <span class="hero-label">SUPPLIER QUALIFICATION & COMPLIANCE</span>
+                <h1>Built for Corporate Procurement & Long-Term Accountability.</h1>
+                <div class="accent-line"></div>
+                <p>Decal Authority operates under a fully registered commercial trading entity with structured invoicing, withholding tax (Form 2307) reconciliation processes, and documented operational controls.</p>
+            </div>
+        </section>
+
+        <!-- CORPORATE SNAPSHOT (Injected via JSON) -->
+        <section class="procurement-section bg-light">
+            <div class="section-container" style="max-width: 1000px;">
+                
+                <div class="snapshot-container">
+                    <div class="snapshot-header">
+                        CORPORATE SNAPSHOT & VENDOR CREDENTIALS
+                    </div>
+                    <div class="snapshot-table" id="json-snapshot">
+                        <!-- Snapshot data loads here -->
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; text-align: right;">
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=info@decalauthority.ph&su=Request+for+Vendor+Accreditation+Documents&body=Hi+Decal+Authority+team,%0A%0AWe+would+like+to+request+copies+of+your+DTI,+BIR,+and+BMBE+registrations+for+our+vendor+accreditation+process.%0A%0AThank+you!&tf=cm" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Request Compliance Documents</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMMERCIAL PHILOSOPHY (Injected via JSON) -->
+        <section class="philosophy-section">
+            <div class="section-container" style="max-width: 1000px;">
+                <div class="philosophy-grid">
+                    <div class="philosophy-title">
+                        <span class="hero-label">COMMERCIAL PHILOSOPHY</span>
+                        <h2 id="json-philosophy-title"></h2>
+                    </div>
+                    <div class="philosophy-content" id="json-philosophy-content">
+                        <!-- Paragraphs load here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer injected here by global.js -->
+    <div id="global-footer"></div>
+
+    <!-- Core Scripts -->
+    <script src="/global.js"></script>
+
+    <!-- JSON Fetch Script for Procurement -->
+    <script>
+        fetch('/data/procurement.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // 1. Build Corporate Snapshot Table
+                const snapshotContainer = document.getElementById('json-snapshot');
+                data.snapshot.forEach(item => {
+                    snapshotContainer.innerHTML += `
+                        <div class="snapshot-row">
+                            <div class="snapshot-label">${item.label}</div>
+                            <div class="snapshot-value ${item.customClass}">${item.value}</div>
+                        </div>
+                    `;
+                });
+
+                // 2. Build Commercial Philosophy
+                document.getElementById('json-philosophy-title').innerText = data.philosophy.title;
+                
+                const philosophyContainer = document.getElementById('json-philosophy-content');
+                data.philosophy.paragraphs.forEach(paragraph => {
+                    philosophyContainer.innerHTML += `<p>${paragraph}</p>`;
+                });
+
+            })
+            .catch(error => console.error('Error loading procurement data:', error));
+    </script>
+</body>
+</html>

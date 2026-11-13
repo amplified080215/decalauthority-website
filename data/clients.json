@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Eagle Cement",
+        "url": "https://eaglecement.com.ph/",
+        "logo": "/assets/images/clients/eagle-cement.svg",
+        "noInvert": true
+    },
+    {
+        "name": "CEVA Logistics",
+        "url": "https://www.cevalogistics.com/",
+        "logo": "/assets/images/clients/ceva-logistics.svg",
+        "noInvert": false
+    },
+    {
+        "name": "Trends Group",
+        "url": "https://www.trends.com.ph/",
+        "logo": "/assets/images/clients/trends-group.svg",
+        "noInvert": false
+    },
+    {
+        "name": "O!Save Trading",
+        "url": "https://osave.com.ph/",
+        "logo": "/assets/images/clients/osave.svg",
+        "noInvert": false
+    },
+    {
+        "name": "Supremacy International",
+        "url": "https://supremacyinternational.com/",
+        "logo": "/assets/images/clients/supremacy.svg",
+        "noInvert": false
+    },
+    {
+        "name": "Vista Land",
+        "url": "https://www.vistaland.com.ph/",
+        "logo": "/assets/images/clients/vista-land.svg",
+        "noInvert": false
+    },
+    {
+        "name": "Bollore Logistics",
+        "url": "https://www.cevalogistics.com/fr",
+        "logo": "/assets/images/clients/bollore-logistics.svg",
+        "noInvert": false
+    },
+    {
+        "name": "Schneider Electric",
+        "url": "https://www.se.com/",
+        "logo": "/assets/images/clients/schneider-electric.svg",
+        "noInvert": false
+    }
+]

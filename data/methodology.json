@@ -1,0 +1,53 @@
+{
+  "stressTest": {
+    "label": "COLLABORATIVE ENGINEERING",
+    "title": "Simulating Failure Before Production Begins.",
+    "paragraphs": [
+      "Most fleet branding failures happen because a print shop blindly printed an emailed PDF. We intercept that process by identifying failure modes early.",
+      "Before a single meter of vinyl is printed, we evaluate substrate conditions, forward highway wind resistance, panel seams, and the maximum allowable downtime for your revenue-generating assets."
+    ],
+    "callout": {
+      "questionLabel": "THE QUESTION WE WILL ASK:",
+      "question": "“Since this unit has existing paint underneath, what happens under midday sun if standard white-backed vinyl allows ghosting to bleed through?”",
+      "answerLabel": "THE ENGINEERED SOLUTION:",
+      "answer": "Opaque grey or black blockout adhesive backing paired with a cured eco-solvent print and matched overlaminate."
+    }
+  },
+  "protocol": [
+    {
+      "stage": "STAGE 01",
+      "title": "Understand the Requirement",
+      "description": "We acquire the actual operational requirement—fleet count, substrate condition, dispatch windows, and compliance needs—rather than guessing."
+    },
+    {
+      "stage": "STAGE 02",
+      "title": "Translate the Specification",
+      "description": "Customer artwork or PDF standards are converted into a physical production specification calibrated to real-world vehicle dimensions."
+    },
+    {
+      "stage": "STAGE 03",
+      "title": "Stress-Test the Solution",
+      "description": "We identify possible issues—seam direction, paint show-through, recess bridging—before production begins."
+    },
+    {
+      "stage": "STAGE 04",
+      "title": "Engineer the Execution",
+      "description": "Material grade, white/grey/black backing, micron thickness, overlaminate compatibility, and installation workflow are locked together."
+    },
+    {
+      "stage": "STAGE 05",
+      "title": "Produce",
+      "description": "Eco-solvent printing and plotter cutting follow the translated specification, including mandatory ink curing before lamination and off-site panel pre-kitting."
+    },
+    {
+      "stage": "STAGE 06",
+      "title": "Install",
+      "description": "Controlled workflow utilizing Back-to-Front Overlap sequence, Knifeless Tape zero-damage trimming, and adaptive deployment phasing."
+    },
+    {
+      "stage": "STAGE 07",
+      "title": "Verify & Standardize",
+      "description": "Final quality verification and completion documentation close the project, archiving your specification for repeatable future rollouts."
+    }
+  ]
+}
