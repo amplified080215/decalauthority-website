@@ -23,7 +23,7 @@
 }
 
     body {
-        font-family: "Noto Sans", sans-serif;
+        font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         background-color: var(--color-bg);
         color: var(--color-navy);
         line-height: 1.6;
@@ -2214,4 +2214,22 @@ html, body {
 #compiled-text {
     box-sizing: border-box !important;
     max-width: 100% !important;
+}
+
+/* ==========================================================================
+   ACTIVE PAGE HIGHLIGHTING
+   ========================================================================== */
+.nav-links a.active-nav-item {
+    color: var(--color-navy) !important;
+    font-weight: 700 !important;
+}
+
+/* Adds the subtle mustard underline marker */
+.nav-links a.active-nav-item::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-mustard);
+    margin-top: 4px;
 }
