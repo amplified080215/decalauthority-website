@@ -38,7 +38,7 @@ const navbarHtml = `
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
-        <li><a href="https://m.me/decalauthority.ph" class="nav-cta">Get a Quote</a></li>
+        <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
     </ul>
 </nav>
 `;
