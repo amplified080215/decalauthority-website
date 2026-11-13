@@ -15,7 +15,7 @@ function injectFavicon() {
 injectFavicon();
 
 // ==========================================================================
-// 2. INJECT NAVBAR
+// 2. INJECT NAVBAR (Fallback)
 // ==========================================================================
 const navbarHtml = `
 <nav style="position: relative; z-index: 1000;">
@@ -38,20 +38,56 @@ const navbarHtml = `
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
-        <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
+        <li><a href="https://m.me/decalauthority.ph" class="nav-cta">Get a Quote</a></li>
     </ul>
 </nav>
 `;
 
 const navContainer = document.getElementById('global-nav');
-if (navContainer) navContainer.innerHTML = navbarHtml;
+if (navContainer) {
+    navContainer.innerHTML = navbarHtml;
+}
+
+// ==========================================================================
+// 2.5 HIGHLIGHT ACTIVE CURRENT PAGE (Bulletproof)
+// ==========================================================================
+// This logic was pulled OUTSIDE the injection block. It now scans the entire document 
+// for the links. This means it will work perfectly whether you inject the navbar with 
+// JavaScript OR load it statically via nav.html in Astro!
+function highlightActiveMenu() {
+    // 1. Get the current URL and clean it up (removes index.html and trailing slashes)
+    let currentPath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+    
+    // 2. Find all links inside the nav (excluding the Get a Quote button)
+    const navItems = document.querySelectorAll('#nav-links a:not(.nav-cta)');
+    
+    navItems.forEach(link => {
+        let linkPath = link.getAttribute('href');
+        if (!linkPath) return;
+
+        // Clean up the link's path for a perfect match
+        linkPath = linkPath.replace(/\/index\.html$/, '').replace(/\/$/, '');
+        
+        // 3. Exact matching logic
+        if (linkPath === '' && currentPath === '') {
+            // Home page match
+            link.classList.add('active-nav-item');
+        } 
+        else if (linkPath !== '' && currentPath === linkPath) {
+            // Subpage exact match (e.g. /capabilities perfectly matches /capabilities)
+            link.classList.add('active-nav-item');
+        }
+    });
+}
+
+// Run immediately for injected navs
+highlightActiveMenu();
+// Run again when the document finishes loading for static nav.html files
+document.addEventListener('DOMContentLoaded', highlightActiveMenu);
 
 // ==========================================================================
 // 3. HAMBURGER MENU LOGIC (Bulletproof Event Delegation)
 // ==========================================================================
-// By attaching the click listener to the entire document, it guarantees 
-// the hamburger menu works on every page, regardless of how fast or slow 
-// the page loads, or if the navbar was injected dynamically.
 document.addEventListener('click', (e) => {
     const hamburgerBtn = e.target.closest('#hamburger-menu');
     
@@ -73,7 +109,6 @@ const footerHtml = `
     <div class="footer-container">
         <div class="footer-grid">
             
-            <!-- Brand & Contact -->
             <div class="footer-brand">
                 <a href="/" class="logo" style="margin-bottom: 20px; display: inline-flex;">
                     <img src="/assets/images/decal.svg" alt="Decal" class="nav-logo-decal">
@@ -83,7 +118,6 @@ const footerHtml = `
                 <div class="footer-contact">info@decalauthority.ph &nbsp;|&nbsp; 0927-728-4414</div>
             </div>
 
-            <!-- Navigation -->
             <div class="footer-nav">
                 <div class="footer-heading">Architecture</div>
                 <div class="footer-links">
@@ -98,7 +132,6 @@ const footerHtml = `
                 </div>
             </div>
 
-            <!-- Hubs -->
             <div class="footer-hubs">
                 <div class="footer-heading">Operation Hubs</div>
                 <ul>
@@ -111,7 +144,6 @@ const footerHtml = `
 
         </div>
 
-        <!-- Copyright / Bottom -->
         <div class="footer-bottom">
             <div>REGISTERED ENTITY: DECAL-AUTHORITY-OL STICKER TRADING &nbsp;|&nbsp; EST. 2018</div>
             <div>Setting the standard in brand executions across the country.</div>
@@ -126,12 +158,11 @@ if (footerContainer) footerContainer.innerHTML = footerHtml;
 // ==========================================================================
 // 5. CLIENT MARQUEE INJECTION
 // ==========================================================================
-// Fetch and build the client marquee
 fetch('/data/clients.json')
     .then(response => response.json())
     .then(clients => {
         const track = document.getElementById('client-marquee-track');
-        if (!track) return; // Only runs if the marquee is on the current page
+        if (!track) return; 
 
         let slideContent = '';
         
@@ -146,7 +177,6 @@ fetch('/data/clients.json')
             `;
         });
         
-        // Inject the content twice for the infinite CSS loop
         track.innerHTML = slideContent + slideContent;
     })
     .catch(error => console.error('Error loading clients JSON:', error));
