@@ -1,16 +1,24 @@
-<nav>
+<nav style="position: relative; z-index: 1000;">
     <a href="/" class="logo">
         <img src="/assets/images/decal.svg" alt="Decal" class="nav-logo-decal">
         <img src="/assets/images/authority.svg" alt="Authority" class="nav-logo-authority">
     </a>
     
-    <ul class="nav-links">
+    <!-- Hamburger Icon for Mobile -->
+    <div class="hamburger" id="hamburger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- ADDED: id="nav-links" so the JavaScript can find it -->
+    <ul class="nav-links" id="nav-links">
         <li><a href="/fleet-graphics/">Fleet Graphics</a></li>
         <li><a href="/capabilities/">Capabilities</a></li>
         <li><a href="/methodology/">Methodology</a></li>
         <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
-        <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
+        <li><a href="https://m.me/decalauthority.ph" class="nav-cta">Get a Quote</a></li>
     </ul>
 </nav>
