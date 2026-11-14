@@ -2183,62 +2183,35 @@ body.no-scroll {
     }
 }
 
-/* --- MOBILE FIX FOR GRAND GALLERY MARQUEE --- */
-.gallery-item {
-    min-width: 260px; /* Shrinks the width so it fits perfectly on a phone screen */
-}
-.gallery-item img {
-    height: 180px; /* Scales the height down proportionally */
-}
-.grand-gallery-section {
-    padding: 50px 0 !important; /* Reduces excessive white space above/below marquee */
-}
+/* --- MOBILE FIX FOR GRAND GALLERY MARQUEE (2 ROWS, SMALLER) --- */
+@media (max-width: 768px) {
+    /* 1. Shrink the boxes so they look like landscape photos on phones */
+    .gallery-item {
+        min-width: 280px !important; 
+        border-radius: 6px !important;
+        border: 1px solid var(--color-border) !important;
+    }
 
-/* ==========================================================================
-   HORIZONTAL SCROLL / SIDEWAYS MOVEMENT FIX
-   ========================================================================== */
+    .gallery-item img {
+        height: 190px !important; /* Restores landscape proportion */
+        width: 100% !important;
+        border-radius: 6px !important;
+    }
 
-/* 1. Forces all padding and borders to sit INSIDE the 100% width, not add to it */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+    /* 2. Tighter gaps for smaller screens */
+    .gallery-marquee-track {
+        gap: 15px !important;
+        width: max-content !important;
+        animation: scrollGallery 40s linear infinite !important;
+    }
 
-/* 2. Strictly locks the page width so it cannot slide side-to-side */
-html, body {
-    max-width: 100vw;
-    overflow-x: hidden;
-}
+    /* 3. Bring back Row 2 */
+    .gallery-marquee-wrapper:nth-of-type(2) {
+        display: block !important; 
+        margin-top: 15px !important; /* Tighter gap between row 1 and row 2 */
+    }
 
-/* 3. Ensures the inquiry builder inputs never stretch beyond their container */
-.intake-builder input, 
-.intake-builder select, 
-.intake-builder textarea {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-}
-
-/* 4. Keeps the text output box perfectly contained */
-#compiled-text {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-}
-
-/* ==========================================================================
-   ACTIVE PAGE HIGHLIGHTING
-   ========================================================================== */
-.nav-links a.active-nav-item {
-    color: var(--color-navy) !important;
-    font-weight: 700 !important;
-}
-
-/* Adds the absolute positioned underline marker so it doesn't push the height */
-.nav-links a.active-nav-item::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px; 
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-mustard) !important;
-    margin-top: 0;
+    .grand-gallery-section {
+        padding: 40px 0 20px 0 !important;
+    }
 }
