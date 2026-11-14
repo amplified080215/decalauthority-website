@@ -38,7 +38,7 @@ const navbarHtml = `
         <li><a href="/gallery/">Execution Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
-        <li><a href="/contacts/" class="nav-cta">Contacts</a></li>
+        <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
     </ul>
 </nav>
 `;
@@ -131,7 +131,7 @@ const footerHtml = `
                     <a href="/locations/">Our Locations</a>
                     
                     <a href="/procurement/">Procurement</a>
-                    <a href="/contacts/">Contacts</a>
+                    <a href="/contacts/">Get a Quote</a>
                 </div>
             </div>
 
