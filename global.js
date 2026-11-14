@@ -35,10 +35,10 @@ const navbarHtml = `
         <li><a href="/fleet-graphics/">Fleet Graphics</a></li>
         <li><a href="/capabilities/">Capabilities</a></li>
         <li><a href="/methodology/">Methodology</a></li>
-        <li><a href="/gallery/">Gallery</a></li>
+        <li><a href="/gallery/">Execution Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
-        <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
+        <li><a href="/contacts/" class="nav-cta">Contacts</a></li>
     </ul>
 </nav>
 `;
@@ -110,7 +110,7 @@ const footerHtml = `
         <div class="footer-grid">
             
             <div class="footer-brand">
-                <a href="/" class="logo" style="margin-bottom: 20px; display: inline-flex;">
+                <a href="/" class="logo" style="margin-bottom: 25px; display: inline-flex;">
                     <img src="/assets/images/decal.svg" alt="Decal" class="nav-logo-decal">
                     <img src="/assets/images/authority.svg" alt="Authority" class="nav-logo-authority">
                 </a>
@@ -123,10 +123,13 @@ const footerHtml = `
                 <div class="footer-links">
                     <a href="/">Overview</a>
                     <a href="/fleet-graphics/">Fleet Graphics</a>
+                    
                     <a href="/capabilities/">Capabilities</a>
                     <a href="/methodology/">Methodology</a>
-                    <a href="/gallery/">Gallery</a>
-                    <a href="/locations/">Locations</a>
+                    
+                    <a href="/gallery/">Execution Gallery</a>
+                    <a href="/locations/">Our Locations</a>
+                    
                     <a href="/procurement/">Procurement</a>
                     <a href="/contacts/">Contacts</a>
                 </div>
