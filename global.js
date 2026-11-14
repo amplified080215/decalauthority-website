@@ -35,7 +35,7 @@ const navbarHtml = `
         <li><a href="/fleet-graphics/">Fleet Graphics</a></li>
         <li><a href="/capabilities/">Capabilities</a></li>
         <li><a href="/methodology/">Methodology</a></li>
-        <li><a href="/gallery/">Execution Gallery</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
         <li><a href="/locations/">Locations</a></li>
         <li><a href="/procurement/">Procurement</a></li>
         <li><a href="/contacts/" class="nav-cta">Get a Quote</a></li>
