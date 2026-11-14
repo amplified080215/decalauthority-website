@@ -2215,3 +2215,46 @@ body.no-scroll {
         padding: 40px 0 20px 0 !important;
     }
 }
+
+/* ==========================================================================
+   HORIZONTAL SCROLL / SIDEWAYS MOVEMENT FIX
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.intake-builder input, 
+.intake-builder select, 
+.intake-builder textarea {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+}
+
+#compiled-text {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+}
+
+/* ==========================================================================
+   ACTIVE PAGE HIGHLIGHTING
+   ========================================================================== */
+.nav-links a.active-nav-item {
+    color: var(--color-navy) !important;
+    font-weight: 700 !important;
+}
+
+.nav-links a.active-nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-mustard) !important;
+    margin-top: 0;
+}
