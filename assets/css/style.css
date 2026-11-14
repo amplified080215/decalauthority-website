@@ -79,7 +79,6 @@ nav {
     align-items: center;
     gap: 8px; 
     text-decoration: none;
-    height: 100%;
 }
 .nav-logo-decal {
     height: 18px;
@@ -152,10 +151,10 @@ nav {
 .global-footer {
     background-color: #F8F9FA;
     border-top: 1px solid var(--color-border);
-    padding: 80px 5% 40px 5%;
+    padding: 80px 5% 40px 5%; 
     color: var(--color-text-muted);
     text-align: left;
-    margin-top: 60px;
+    margin-top: 40px; 
 }
 
 .footer-container {
@@ -165,32 +164,26 @@ nav {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2.5fr 1.5fr 1.5fr;
-    gap: 60px;
-    padding-bottom: 50px;
+    /* Precisely matching the image's layout proportions */
+    grid-template-columns: 1.3fr 1.7fr 1fr; 
+    gap: 50px; 
+    padding-bottom: 40px; 
     border-bottom: 1px solid var(--color-border);
-}
-
-.footer-logo-text {
-    display: block;
-    font-size: 1.25rem;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-navy);
-    letter-spacing: -0.5px;
-    margin-bottom: 15px;
 }
 
 .footer-brand p {
     font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    max-width: 350px;
+    line-height: 1.7;
+    margin-bottom: 30px; /* Exact spacing from the image */
+    max-width: none; 
+    padding-right: 20px; 
+    color: var(--color-text-muted);
 }
 
 .footer-contact {
     font-family: "JetBrains Mono", monospace, sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-navy);
 }
 
 .footer-heading {
@@ -198,14 +191,14 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--color-navy);
-    font-size: 0.8rem;
-    margin-bottom: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
 }
 
 .footer-links {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 18px 20px; /* Vertical and horizontal gap to perfectly match image */
 }
 
 .footer-links a {
@@ -222,35 +215,41 @@ nav {
 .footer-hubs ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
     font-family: "JetBrains Mono", monospace, sans-serif;
-    font-size: 0.75rem;
-    line-height: 1.8;
+    font-size: 0.8rem;
+    line-height: 2.2; /* Widened line height matching image */
+    color: var(--color-text-muted);
 }
 
 .footer-compliance {
     font-family: "JetBrains Mono", monospace, sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--color-navy);
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .footer-bottom {
-    padding-top: 30px;
+    padding-top: 30px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: "JetBrains Mono", monospace, sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.75rem; /* Matched specific image size */
+    color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 /* Mobile Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) { 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px; 
+    }
+    .footer-brand p {
+        padding-right: 0;
     }
     .footer-bottom {
         flex-direction: column;
@@ -1796,7 +1795,7 @@ nav {
 }
 
 .nav-cta:active {
-    transform: scale(0.98);
+    transform: scale(0.98); 
 }
 
 /* HIGHLIGHT ACTIVE CONTACTS PAGE CTA */
